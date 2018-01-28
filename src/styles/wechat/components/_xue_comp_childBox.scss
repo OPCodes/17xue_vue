@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+.xue_comp_childBox {
+    position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+    .xue_comp_childBox_shadow {
+        background: rgba(0, 0, 0, 0.6);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+    }
+    .xue_comp_childBox_content {
+        @include animate(showAlert, .3s, '');
+        margin-left: px2rem(-335);
+        position: absolute;
+        left: 50%;
+        top: 18%;
+        width: px2rem(670);
+        min-height: px2rem(680);
+        background: #fff;
+        border-radius: px2rem(40);
+        overflow: hidden;
+        .childBox_close {
+            position: absolute;
+			right: 0;
+			top: 0;
+			width: px2rem(108);
+			height: px2rem(108);
+			background: url(#{$img}center/close.png) no-repeat center center;
+			background-size: px2rem(23) px2rem(23);
+        }
+        .xue_comp_childBox_title {
+            height: px2rem(108);
+            line-height: px2rem(108);
+            font-size: px2rem(30);
+            text-align: center;
+            color: #212121;
+            border-bottom: 1px solid #CCC;
+        }
+        .xue_comp_childBox_list {
+            padding: px2rem(78) px2rem(35) px2rem(10);
+            min-height: px2rem(482);
+            .item {
+                margin: 0 px2rem(38) px2rem(50);
+                width: px2rem(124);
+                height: px2rem(191);
+                .pic-wrapper {
+                    position: relative;
+                    width: px2rem(124);
+                    height: px2rem(124);
+                    .avatar-pic {
+                        width: px2rem(122);
+                        height: px2rem(122);
+                        border: 1px solid #F0F1F5;
+                        border-radius: px2rem(61);
+                    }
+                    .sel-icon {
+                        display: none;
+                        position: absolute;
+                        right: px2rem(4);
+                        bottom: px2rem(4);
+                        width: px2rem(32);
+                        height: px2rem(32);
+                        background: url(#{$img}userManagement/select-icon.png) no-repeat;
+                        background-size: 100% 100%;
+                    }
+                    &.active {
+                        .avatar-pic {
+                            border-color: #F85762;
+                        }
+                        .sel-icon {
+                            display: block;
+                        }
+                    }
+                }
+                .name {
+                    display: block;
+                    max-width: px2rem(124);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    height: px2rem(67);
+                    line-height: px2rem(67);
+                    font-size: px2rem(28);
+                    color: #212121;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

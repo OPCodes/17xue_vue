@@ -1,0 +1,193 @@
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.hidden {
+	display: none;
+}
+.couponItem {
+	width: 100%;
+	.tabItem {
+		background-color: #FFF;
+		border-bottom: solid 1px #CCCCCC;
+	}
+	.tabs {
+		width: px2rem(610);
+		margin: 0 auto;
+		.tab {
+			width: px2rem(150);
+			height: px2rem(56);
+			font-size: px2rem(30);
+			line-height: px2rem(30);
+			color: #6F6F6F;
+			text-align: center;
+			margin-top: px2rem(33);
+			&.done {
+				margin-left: px2rem(80);
+			}
+			&.on {
+				color: #FF4146;
+				border-bottom: solid px2rem(2) #FF4146;
+			}
+		}
+	}
+	.exchangeItem {
+		background-color: #FFF;
+		.exchange {
+			width: px2rem(690);
+			margin: 0 auto;
+			.exchangeCode {
+				margin-top: px2rem(19);
+				margin-bottom: px2rem(21);
+				.code {
+					width: px2rem(456);
+					height: px2rem(75);
+					border: solid 1px #BDBDBD;
+					border-radius: px2rem(100);
+					box-sizing: border-box;
+					padding-left: px2rem(40);
+					font-size: px2rem(26);
+				}
+			}
+			.exchangeButton {
+				margin-top: px2rem(19);
+				margin-bottom: px2rem(21);
+				width: px2rem(173);
+				height: px2rem(75);
+				border: solid 1px #FF5357;
+				border-radius: px2rem(100);
+				box-sizing: border-box;
+				text-align: center;
+				line-height: px2rem(75);
+				color: #F95862;
+				font-size: px2rem(32);
+			}
+		}
+	}
+	.couponList {
+		margin-top: px2rem(30);
+		.coupon {
+			width: px2rem(690);
+			margin: 0 auto px2rem(20) auto;
+			background-color: #FFF;
+			border-radius: px2rem(10);
+			position: relative;
+			overflow: hidden;
+			.couponContent {
+				.couponPrice {
+					color: #FF775A;
+					width: px2rem(184);
+					margin-top: px2rem(68);
+					margin-bottom: px2rem(59);
+					margin-left: px2rem(9);
+					text-align: center;
+					.num {
+						font-size: px2rem(50);
+						line-height: px2rem(50);
+					}
+					.sign {
+						font-size: px2rem(34);
+						line-height: px2rem(34);
+					}
+				}
+				.couponInfo {
+					.couponName {
+						font-size: px2rem(32);
+						line-height: px2rem(32);
+						color: #212121;
+						margin-top: px2rem(38);
+					}
+					.couponDate {
+						font-size: px2rem(24);
+						line-height: px2rem(24);
+						color: #6F6F6F;
+						margin-top: px2rem(20);
+						&.couponNum {
+							margin-top: px2rem(10);
+						}
+					}
+				}
+			}
+			.range {
+				width: px2rem(500);
+				overflow: hidden;
+				text-overflow:ellipsis;
+				white-space: nowrap;
+				line-height: px2rem(62);
+				padding-left: px2rem(39);
+				font-size: px2rem(24);
+				color: #BDBDBD;
+				border-top: dotted 1px rgba(0,0,0,0.1);
+			}
+			.cricleLeft {
+				position: absolute;
+				width: px2rem(30);
+				height: px2rem(30);
+				border-radius: 50%;
+				background-color: #F4F4F4;
+				bottom: px2rem(48);
+				left: px2rem(-15);
+			}
+			.cricleRight {
+				position: absolute;
+				width: px2rem(30);
+				height: px2rem(30);
+				border-radius: 50%;
+				background-color: #F4F4F4;
+				bottom: px2rem(48);
+				right: px2rem(-15);
+			}
+			.doneText {
+				width: px2rem(179);
+				height: px2rem(179);
+				background-color: #FFDDE2;
+				transform: rotate(45deg);
+				color: #F95862;
+				font-size: px2rem(24);
+				text-align: center;
+				line-height: px2rem(316);
+				overflow: hidden;
+				position: absolute;
+				top: px2rem(-100);
+				right: px2rem(-100);
+				opacity: 0.6;
+			}
+			.iconSignNot {
+				width: px2rem(126);
+				height: px2rem(130);
+				position: absolute;
+				right: 0;
+				bottom: px2rem(10);
+				background:  url(#{$img}couponNot.png) no-repeat;
+				background-size: 100% 100%;
+			}
+			&.couponDone {
+				.couponContent {
+					.couponPrice {
+						opacity: 0.5;
+					}
+					.couponInfo {
+						opacity: 0.6;
+					}
+				}
+			}
+			&.couponNot {
+				.couponContent {
+					.couponPrice {
+						color: #BDBDBD;
+					}
+					.couponInfo {
+						.couponName {
+							color: #BDBDBD;
+						}
+						.couponDate {
+							color: #BDBDBD;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,294 @@
+@charset "UTF-8";
+
+// mixins
+@mixin bg($name, $width: auto, $height: auto) {
+    background-image: url(../images/wechat/ac_1220/#{$name});
+    background-size: $width $height;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+@mixin box($width, $height) {
+	width: $width;
+	height: $height;
+}
+@mixin font($font-size, $line-height, $color: #fff) {
+	font-size: px2rem($font-size);
+	line-height: px2rem($line-height);
+	color: $color;
+}
+
+body {
+	background: #ffbb18;
+	font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif;
+}
+
+.bg_top {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: px2rem(593);
+	@include bg('top_bg.png', 100%, px2rem(593));
+	&.B {
+		@include bg('top_bg_B.png', 100%, px2rem(593));
+	}
+	.grade_txt {
+		@include box(px2rem(200), px2rem(76));
+		@include font(28, 76);
+		text-align: center;
+		border-radius: 0 0 px2rem(25) 0;
+		background: #f68940;
+	}
+}
+.main_content {
+	position: relative;
+	left: 0;
+	top: 0;
+	padding-top: px2rem(420);
+	padding-bottom: px2rem(50);
+	.main_sec {
+		width: px2rem(650);
+		padding-bottom: px2rem(35);
+		background: #fff;
+		border-radius: px2rem(36);
+		margin: 0 auto;
+	}
+	.main_desc {
+		margin: 0 auto px2rem(40);
+		box-sizing: border-box;
+		padding-top: px2rem(48);
+		.desc_title {
+			@include font(28, 44, #888179);
+			text-align: center;
+			strong {
+				@include font(50, 50, #ff961b);
+			}
+		}
+		.desc_icon {
+			@include box(px2rem(253), px2rem(144));
+			@include bg('icon_pc.png', px2rem(253), px2rem(144));
+			margin: px2rem(30) auto 0;
+		}
+		.desc_txt_wrapper {
+			width: px2rem(550);
+			margin: px2rem(28) auto 0;
+			margin-bottom: px2rem(-16);
+			overflow: hidden;
+			.desc_txt {
+				.txt_row {
+					@include box(50%, px2rem(33));
+					float: left;
+					margin-bottom: px2rem(16);
+					font-size: 0;
+					padding: 0 px2rem(20);
+					box-sizing: border-box;
+					&:nth-child(odd) {
+						text-align: left;
+					}
+					&:nth-child(even) {
+						text-align: right;
+					}
+					&:nth-child(1) .row_icon {
+						@include box(px2rem(30), px2rem(30));
+						@include bg('icon_row_1.png', px2rem(30), px2rem(30));
+					}
+					&:nth-child(2) .row_icon {
+						@include box(px2rem(34), px2rem(30));
+						@include bg('icon_row_2.png', px2rem(34), px2rem(30));
+					}
+					&:nth-child(3) .row_icon {
+						@include box(px2rem(30), px2rem(32));
+						@include bg('icon_row_3.png', px2rem(30), px2rem(32));
+					}
+					&:nth-child(4) .row_icon {
+						@include box(px2rem(30), px2rem(33));
+						@include bg('icon_row_4.png', px2rem(30), px2rem(33));
+					}
+					.row_icon {
+						display: inline-block;
+						vertical-align: middle;
+						margin-right: px2rem(16);
+					}
+					.row_txt {
+						display: inline-block;
+						@include font(24, 28, #999999);
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+		.desc_btn {
+			display: block;
+			@include box(px2rem(550), px2rem(86));
+			@include font(32, 86);
+			background: #e85353;
+			border-radius: px2rem(43);
+			margin: px2rem(35) auto px2rem(27);
+			text-align: center;
+		}
+		.desc_link {
+			@include font(28, 28, #e85353);
+			text-align: center;
+			display: block;
+		}
+	}
+	.scroll_tip {
+		@include font(32, 32);
+		text-align: center;
+		margin-bottom: px2rem(40);
+		& > span {
+			display: inline-block;
+			padding-right: px2rem(40);
+			@include bg('icon_scroll_arrow.png', px2rem(24), px2rem(14));
+			background-position: right center;
+		}
+	}
+	.main_process {
+		padding-top: px2rem(78);
+		margin-bottom: px2rem(88);
+		.process_title {
+			@include font(32, 32, #fe9024);
+			text-align: center;
+			margin-bottom: px2rem(78);
+			& > strong {
+				color: #ed3b3b;
+				transform: scale(2);
+				display: inline-block;
+				width: px2rem(78);
+			}
+		}
+		.process_bar_wrapper {
+			@include box(px2rem(560), px2rem(60));
+			margin: 0 auto px2rem(74);
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: justify;
+			-webkit-justify-content: space-between;
+			-moz-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			position: relative;
+			left: 0;
+			top: 0;
+			overflow: hidden;
+			&:before {
+				position: absolute;
+				left: 0;
+				top: px2rem(25);
+				@include box(100%, px2rem(10));
+				background: #dcd1b1;
+				content: '';
+				border-radius: px2rem(5);
+			}
+			.bg_bar {
+				position: absolute;
+				left: 0;
+				top: px2rem(25);
+				@include box(100%, px2rem(10));
+				background: #8bc81f;
+				border-radius: 0 px2rem(5) px2rem(5) 0;
+				margin-left: px2rem(60);
+				box-sizing: border-box;
+			}
+			// &.num1:before {
+			// 	width: px2rem(30) !important;
+			// }
+			.process_bar {
+				position: relative;
+				left: 0;
+				top: 0;
+				-webkit-box-flex: 0;
+				-webkit-flex: 0 0 px2rem(60);
+				-moz-box-flex: 0;
+				-ms-flex: 0 0 px2rem(60);
+				flex: 0 0 px2rem(60);
+				height: px2rem(60);
+				background: #8bc81f;
+				border-radius: px2rem(30);
+				@include font(28, 60);
+				text-align: center;
+				&.on {
+					font-size: 0;
+					&:after {
+						@include box(100%, 100%);
+						@include bg('icon_bar_on.png', px2rem(34), px2rem(24));
+						background-position: center center;
+						content: '';
+						position: absolute;
+						left: 0;
+						top: 0;
+					}
+				}
+				&.off {
+					color: #9c9580;
+					background: #dcd1b1;
+				}
+			}
+		}
+		.process_btn {
+			@include box(px2rem(550), px2rem(86));
+			@include font(32, 86);
+			display: block;
+			margin: 0 auto;
+			border-radius: px2rem(43);
+			text-align: center;
+			background: #8bc81f;
+			&.disabled {
+				background: #d0cec9;
+			}
+			&.red {
+				background: #e85353 !important;
+			}
+		}
+		.process_link {
+			@include font(28, 28, #e85353);
+			text-align: center;
+			margin-top: px2rem(35);
+			display: block;
+		}
+	}
+	.main_rule {
+		color: #fff;
+		max-height: 99999999px;
+		.rule_title {
+			@include font(36, 36);
+			margin-bottom: px2rem(38);
+			text-align: center;
+		}
+		.rule_para {
+			margin-bottom: px2rem(24);
+			padding-left: px2rem(50);
+			position: relative;
+			.para_icon_wrapper {
+				@include box(px2rem(50), 100%);
+				.para_icon {
+					@include font(28, 32, #ffbb18);
+					@include box(px2rem(32), px2rem(32));
+					border-radius: px2rem(16);
+					text-align: center;
+					display: block;
+					font-style: normal;
+					background: #fff;
+				}
+				float: left;
+			}
+			.para_txt {
+				float: left;
+				@include font(28, 36);
+			}
+		}
+	}
+	.statement {
+		@include font(28, 28);
+		display: block;
+		text-align: center;
+		margin-top: px2rem(50);
+		.statement_link {
+			color: #fff;
+			text-decoration: underline;
+		}
+	}
+}

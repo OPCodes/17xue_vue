@@ -1,0 +1,208 @@
+@charset "UTF-8";
+.xue_comp_courseProducts {
+    width: 100%;
+    &.moreTop {
+        padding-top: px2rem(90);
+    }
+    .products-title {
+        position: relative;
+        width: 100%;
+        height: px2rem(121);
+        border-bottom: 1px solid #CCCCCC;
+        background: #fff;
+        .title {
+            position: relative;
+            margin-left: px2rem(30);
+            padding-left: px2rem(60);
+            width: px2rem(160);
+            height: 100%;
+            line-height: px2rem(130);
+            font-size: px2rem(36);
+            font-weight: normal;
+            color: #000;
+            .title-icon {
+                position: absolute;
+                left: px2rem(4);
+                top: px2rem(45);
+                width: px2rem(36);
+                height: px2rem(38);
+                background: url(#{$img}courseCenter/select-course-icon.png) no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+        .open-course-title {
+            position: relative;
+            margin-left: px2rem(30);
+            padding-left: px2rem(60);
+            width: px2rem(185);
+            height: 100%;
+            line-height: px2rem(122);
+            font-size: px2rem(36);
+            font-weight: normal;
+            color: $parentGMTitleColor;
+            .open-course-icon {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                margin-top: px2rem(-22);
+                width: px2rem(44);
+                height: px2rem(44);
+                background: url(#{$img}courseCenter/open-course-icon.png) no-repeat;
+                background-size: px2rem(44) px2rem(44);
+                &.select-course-icon {
+                   background: url(#{$img}courseCenter/select-course-icon.png) no-repeat;
+                   background-size: px2rem(44) px2rem(44);
+                }
+            }
+        }
+        .more {
+            position: absolute;
+            top: 50%;
+            right: px2rem(30);
+            padding-right: px2rem(28);
+            height: px2rem(44);
+            line-height: px2rem(44);
+            margin-top: px2rem(-22);
+            font-size: px2rem(24);
+            color: #99A5C8;
+            .more-icon {
+                position: absolute;
+                top: px2rem(10);
+                right: 0;
+                width: px2rem(11);
+                height: px2rem(24);
+                background: url(#{$img}courseCenter/more-icon.png) no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+    }
+    .products-wrapper {
+        padding-left: px2rem(30);
+        width: px2rem(720);
+        background: #fff;
+        .products-list {
+            // margin-bottom: px2rem(150);
+            .products-item {
+                padding: px2rem(40) px2rem(30) px2rem(36) 0;
+                width: px2rem(690);
+                height: px2rem(154);
+                // border-bottom: 1px solid #ccc;
+                & > a {
+                    display: block;
+                }
+                &:last-child {
+                    border: none;
+                }
+                .pic-wrapper {
+                    padding-top: px2rem(4);
+                    margin-right: px2rem(20);
+                    height: px2rem(150);
+                    width: px2rem(200);
+                    .course-pic {
+                        width: px2rem(200);
+                        height: px2rem(150);
+                        border-radius: px2rem(8);
+                    }
+                }
+                .course-content {
+                    width: px2rem(470);
+                    height: px2rem(156);
+                    .top-wrapper {
+                        margin-bottom: px2rem(14);
+                        width: 100%;
+                        height: px2rem(80);
+                        .name {
+                            width: px2rem(350);
+                            height: px2rem(80);
+                            line-height: px2rem(38);
+                            font-size: px2rem(32);
+                            color: $parentGMTitleColor;
+                            font-weight: bold;
+                            overflow: hidden;
+                        }
+                        .card-l, .card-r {
+                            display: block;
+                            margin: px2rem(8) 0 0 px2rem(10);
+                            width: px2rem(44);
+                            height: px2rem(50);
+                        }
+                        .card-l {
+                            background: url(#{$img}courseCenter/card-l-icon.png) no-repeat;
+                            background-size: 100% 100%;
+                        }
+                        .card-r {
+                            background: url(#{$img}courseCenter/card-r-icon.png) no-repeat;
+                            background-size: 100% 100%;
+                        }
+                    }
+                    .teacher-name {
+                        margin-bottom: px2rem(2);
+                        max-width: px2rem(350);
+                        height: px2rem(30);
+                        line-height: px2rem(30);
+                        font-size: px2rem(24);
+                        color: #98A4C7;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                    .date-price {
+                        height: px2rem(30);
+                        font-size: px2rem(22);
+                        color: #C3CBE0;
+                        span {
+                            height: px2rem(30);
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            vertical-align: middle;
+                        }
+                        .date {
+                            max-width: px2rem(250);
+                            line-height: px2rem(34);
+                        }
+                        .real-price {
+                            position: relative;
+                            padding-left: px2rem(20);
+                            margin-left: px2rem(10);
+                            max-width: px2rem(90);
+                            line-height: px2rem(28);
+                            font-size: px2rem(32);
+                            color: $specialRed;
+                            &::before {
+                                content: "￥";
+                                position: absolute;
+                                left: px2rem(-3);
+                                top: 0;
+                                width: px2rem(22);
+                                height: px2rem(28);
+                                font-size: px2rem(26);
+                            }
+                        }
+                        .original-price {
+                            max-width: px2rem(90);
+                            line-height: px2rem(30);
+                            text-decoration: line-through;
+                        }
+                        .tag {
+                            max-width: px2rem(220);
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            line-height: px2rem(30);
+                            font-size: px2rem(22);
+                            color: $specialRed;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#nomore {
+    text-align: center;
+    padding: px2rem(40) px2rem(30) px2rem(70) px2rem(30);
+    color: #6B6B6B;
+    font-size: px2rem(22);
+    background-color: #F2F5F9;
+}

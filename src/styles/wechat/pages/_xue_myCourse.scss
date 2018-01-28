@@ -1,0 +1,121 @@
+@charset "UTF-8";
+.xue_myCourse {
+	.myCourse_list_wrapper {
+		background: #fff;
+		.myCourse_list {
+			margin-left: px2rem(30);
+			height: px2rem(223);
+			position: relative;
+			left: 0;
+			top: 0;
+			border-bottom: 1px solid #CCCCCC;
+			&:last-child {
+				border-bottom: none;
+			}
+			.list_course_detail {
+				padding-top: px2rem(40);
+				display: block;
+				width: px2rem(568);
+				.course_tit {
+					font-size: px2rem(33);
+					color: #000;
+					line-height: px2rem(38);
+					margin-bottom: px2rem(17);
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+				.course_time {
+					color: $normalGrey;
+					font-size: px2rem(26);
+					line-height: px2rem(40);
+					position: relative;
+					left: 0;
+					top: px2rem(-8);
+					.time_date, .time_week, .time_clock {
+						float: left;
+					}
+					.time_week {
+						margin-left: px2rem(30);
+						margin-right: px2rem(10);
+					}
+				}
+				.course_process {
+					height: px2rem(40);
+					margin-top: px2rem(10);
+					.process_box {
+						background: #d8d8d8;
+						border-radius: px2rem(14);
+						width: px2rem(100);
+						height: px2rem(14);
+						float: left;
+						margin-top: px2rem(14);
+						overflow: hidden;
+						.process_bar {
+							display: block;
+							height: 100%;
+							background-image:-webkit-linear-gradient(58deg, $commonRed 0%, $specialRed 56%);
+							background-image:-moz-linear-gradient(58deg, $commonRed 0%, $specialRed 56%);
+							background-image:-o-linear-gradient(58deg, $commonRed 0%, $specialRed 56%);
+							background-image:linear-gradient(32deg, $commonRed 0%, $specialRed 56%);
+							border-radius: px2rem(14);
+						}
+					}
+					.process_name {
+						font-size: px2rem(22);
+						color: $lightGrey;
+						line-height: px2rem(40);
+						margin-left: px2rem(10);
+						float: left;
+					}
+				}
+			}
+			.teacher_avatar {
+				position: absolute;
+				right: px2rem(30);
+				top: px2rem(40);
+				width: px2rem(100);
+				.t_avatar_wrapper {
+					margin-bottom: px2rem(18);
+					width: px2rem(100);
+					height: px2rem(100);
+					display: block;
+					.t_avatar {
+						width: px2rem(100);
+						height: px2rem(100);
+						display: block;
+						border-radius: 50%;
+					}
+				}
+				.t_avatar_name {
+					font-size: px2rem(26);
+					line-height: px2rem(30);
+					text-align: center;
+					color: #4a4a4a;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+}
+.noPadding {
+	padding-bottom: 0;
+}
+.history_panel {
+	background-color: #fff;
+	.aoshu_btn {
+		display: block;
+		width: px2rem(560);
+		height: px2rem(80);
+		line-height: px2rem(80);
+		text-align: center;
+		background-color: #fff;
+		border-radius: px2rem(40);
+		border: 2px solid #F95862;
+		color: #F95862;
+		font-size: px2rem(30);
+		margin: px2rem(30) auto 0;
+	}
+}

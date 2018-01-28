@@ -1,0 +1,153 @@
+@charset "UTF-8";
+.xue_calendar {
+	background: #fff;
+	.cal_year {
+		height: px2rem(119);
+		background: #fff;
+		border-bottom: 1px solid $borderColor;
+		font-size: px2rem(36);
+		line-height: px2rem(119);
+		text-align: center;
+		.year_wrapper {
+			display: inline-block;
+			position: relative;
+			left: 0;
+			top: 0;
+			padding: 0 px2rem(64);
+			.year_arrow {
+				width: px2rem(90);
+				height: 100%;
+				position: absolute;
+				top: 0;
+				&.year_prev {
+					left: px2rem(-45);
+					background: url(#{$img}year_prev.png) no-repeat center;
+					background-size: px2rem(11) px2rem(24);
+				}
+				&.year_next {
+					right: px2rem(-45);
+					background: url(#{$img}year_next.png) no-repeat center;
+					background-size: px2rem(11) px2rem(24);
+				}
+			}
+		}
+	}
+	.cal_week {
+		font-size: px2rem(38);
+		color: #000;
+		padding: 0 px2rem(32);
+		line-height: 100%;
+		height: px2rem(107);
+		overflow: hidden;
+		box-sizing: border-box;
+		.week_col {
+			float: left;
+			text-align: center;
+			width: px2rem(98);
+			height: 100%;
+			padding-top: px2rem(44);
+			box-sizing: border-box;
+			position: relative;
+			left: 0;
+			top: 0;
+			&:before {
+				display: none;
+				width: px2rem(50);
+				height: px2rem(2);
+				background: #FF4146;
+				content: '';
+				position: absolute;
+				left: 50%;
+				bottom: 0;
+				margin-left: px2rem(-25);
+			}
+			&.weekend {
+				color: #FF4146;
+			}
+			&.on {
+				&:before {
+					display: block;
+				}
+			}
+		}
+	}
+	.cal_divider {
+		height: 1px;
+		background: #efefef;
+		width: px2rem(650);
+		margin: 0 auto px2rem(40);
+	}
+	.cal_day {
+		padding: 0 px2rem(32);
+		.day_col {
+			float: left;
+			width: px2rem(98);
+			height: px2rem(98);
+			box-sizing: border-box;
+			position: relative;
+			left: 0;
+			top: 0;
+			&.on .col_wrapper {
+				background-image: -webkit-linear-gradient(58deg, $commonRed 0%, $specialRed 56%);
+				background-image: -moz-linear-gradient(58deg, $commonRed 0%, $specialRed 56%);
+				background-image: -o-linear-gradient(58deg, $commonRed 0%, $specialRed 56%);
+				background-image: linear-gradient(32deg, $commonRed 0%, $specialRed 56%);
+				color: #fff;
+				&::before {
+					border: px2rem(2) solid #fff;
+				}
+			}
+			&.has .col_wrapper {
+				&:after {
+					content: '';
+					width: px2rem(12);
+					height: px2rem(12);
+					position: absolute;
+					left: 50%;
+					bottom: 0;
+					margin-left: px2rem(-6);
+					margin-bottom: px2rem(-10);
+					background: $commonRed;
+					border: px2rem(2) solid #fff;
+					border-radius: 100%;
+				}
+			}
+			&.today .col_wrapper {
+				border: px2rem(2) solid $commonRed;
+			}
+			&.out .col_wrapper {
+				color: #AFADAD;
+				opacity: 0.6;
+			}
+			.col_wrapper {
+				width: px2rem(70);
+				height: px2rem(70);
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin: px2rem(-35) 0 0 px2rem(-35);
+				border-radius: 100%;
+				background: #fff;
+				box-sizing: border-box;
+				color: $normalGrey;
+				font-size: px2rem(28);
+				line-height: px2rem(70);
+				text-align: center;
+			}
+			&.sign {
+				.col_wrapper::before {
+					content: '';
+					position: absolute;
+					display: block;
+					width: px2rem(9);
+					height: px2rem(9);
+					background-color: $commonRed;
+					border-radius: 50%;
+					bottom: px2rem(-5);
+					left: 50%;
+					margin-left: px2rem(-5);
+				}
+			}
+		}
+	}
+}

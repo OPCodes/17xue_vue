@@ -1,0 +1,403 @@
+@charset "UTF-8";
+
+.newSeason {
+	text-align: center;
+	background-image: -moz-linear-gradient( 90deg, rgb(240,245,255) 0%, rgb(207,234,255) 98%);
+	background-image: -webkit-linear-gradient( 90deg, rgb(240,245,255) 0%, rgb(207,234,255) 98%);
+	background-image: -ms-linear-gradient( 90deg, rgb(240,245,255) 0%, rgb(207,234,255) 98%);
+	.n_slogan {
+		height: px2rem(437);
+		background: url(#{$img}newSeason/slogan.png) no-repeat 0 0;
+		background-size: 100% 100%;
+		margin-bottom: px2rem(-96);
+	}
+	.n_Course {
+		position: relative;
+		left: 0;
+		top: 0;
+		.n_btn {
+			position: absolute;
+			left: 50%;
+			bottom: px2rem(52);
+			margin-left: px2rem(-218);
+			width: px2rem(435);
+			height: px2rem(127);
+			background: url(#{$img}newSeason/btn.png) no-repeat 0 0;
+			background-size: 100% 100%;
+			color: #ffffff;
+			font-size: px2rem(36);
+			line-height: px2rem(36);
+			padding-top: px2rem(27);
+			box-sizing: border-box;
+			&.booked {
+				background: url(#{$img}newSeason/btn_booked.png) no-repeat 0 0;
+				background-size: 100% 100%;
+				color: rgba(255, 255, 255, 0.5);
+			}
+			&.more {
+				text-align: left;
+				padding-left: px2rem(70);
+				bottom: px2rem(8);
+				&:after {
+					width: px2rem(19);
+					height: px2rem(32);
+					background: url(#{$img}newSeason/more_arrow.png) no-repeat 0 0;
+					background-size: px2rem(19) px2rem(32);
+					position: absolute;
+					right: px2rem(72);
+					top: px2rem(30);
+					content: '';
+				}
+			}
+		}
+		&.total {
+			height: px2rem(450);
+			background: url(#{$img}newSeason/total.png) no-repeat 0 0;
+			background-size: 100% 100%;
+			margin-bottom: px2rem(14);
+			.n_t_title {
+				color: #8268b6;
+				font-size: px2rem(32);
+				line-height: px2rem(32);
+				padding: px2rem(58) 0 px2rem(26);
+				font-weight: normal;
+			}
+			.n_t_para {
+				color: #8268b6;
+				font-size: px2rem(28);
+				line-height: px2rem(34);
+				padding-left: px2rem(93);
+				padding-right: px2rem(77);
+				text-align: left;
+			}
+		}
+		&.title {
+			height: px2rem(131);
+			background: url(#{$img}newSeason/title.png) no-repeat 0 0;
+			background-size: 100% 100%;
+		}
+		&.Mathematics {
+			// height: px2rem(716);
+			// background: url(#{$img}newSeason/Mathematics.png) no-repeat 0 0;
+			// background-size: 100% 100%;
+		}
+		&.Chinese {
+			// height: px2rem(837);
+			// background: url(#{$img}newSeason/Chinese.png) no-repeat 0 0;
+			// background-size: 100% 100%;
+		}
+		&.English {
+			// height: px2rem(853);
+			// background: url(#{$img}newSeason/English.png) no-repeat 0 0;
+			// background-size: 100% 100%;
+		}
+	}
+	.n_Schedule {
+		// padding: px2rem(56) 0 0 0;
+		box-sizing: border-box;
+		&.last {
+			&:after {
+				background: url(#{$img}newSeason/frame_bottom_last.png) no-repeat 0 0!important;
+				background-size: 100% 100%!important;
+			}
+		}
+		&:before {
+			// position: absolute;
+			// top: 0;
+			// left: 0;
+			display: block;
+			width: 100%;
+			height: px2rem(60);
+			content: '';
+			background: url(#{$img}newSeason/frame_top.png) no-repeat 0 0;
+			background-size: 100% 100%;
+		}
+		&:after {
+			// position: absolute;
+			// bottom: 0;
+			// left: 0;
+			display: block;
+			width: 100%;
+			height: px2rem(60);
+			content: '';
+			background: url(#{$img}newSeason/frame_bottom.png) no-repeat 0 0;
+			background-size: 100% 100%;
+		}
+		.n_activity_box {
+			background: #8fa9e4;
+			box-sizing: border-box;
+			margin: 0 px2rem(20);
+			.activity_title {
+				text-align: center;
+				& > span {
+					display: inline-block;
+					color: #fff;
+					font-size: px2rem(32);
+					line-height: px2rem(32);
+					height: px2rem(32);
+					margin-bottom: px2rem(26);
+					position: relative;
+					left: 0;
+					top: 0;
+					padding: 0 px2rem(50);
+					&:before {
+						content: '';
+						position: absolute;
+						left: 0;
+						top: px2rem(13);
+						width: px2rem(30);
+						height: 1px;
+						background: #fff;
+					}
+					&:after {
+						content: '';
+						position: absolute;
+						right: 0;
+						top: px2rem(13);
+						width: px2rem(30);
+						height: 1px;
+						background: #fff;
+					}
+				}
+			}
+			.activity_info {
+				color: #fff;
+				font-size: px2rem(30);
+				line-height: px2rem(40);
+				.a_i_para {
+					margin-bottom: px2rem(42);
+					padding: 0 px2rem(20);
+					&:last-child {
+						margin-bottom: 0;
+					}
+					.a_i_p_l {
+						float: left;
+						width: px2rem(42);
+						text-align: center
+					}
+					.a_i_p_r {
+						float: left;
+						width: px2rem(620);
+						text-align: left;
+					}
+				}
+			}
+		}
+		.n_teacher_box {
+			background: #8fa9e4;
+			box-sizing: border-box;
+			margin: 0 px2rem(20);
+			.n_t_avatar_box {
+				float: left;
+				width: px2rem(230);
+				& > img {
+					display: block;
+					margin: 0 auto;
+					width: px2rem(128);
+					height: px2rem(128);
+					margin-bottom: px2rem(15);
+					&.double {
+						width: px2rem(191);
+						height: px2rem(113);
+						margin-top: px2rem(37);
+					}
+				}
+				& > p {
+					font-size: px2rem(28);
+					line-height: px2rem(28);
+					color: #fff949;
+					text-align: center;
+				}
+			}
+			.n_t_info_box {
+				color: #fff;
+				float: left;
+				width: px2rem(435);
+				box-sizing: border-box;
+				.n_t_i_title {
+					font-size: px2rem(32);
+					line-height: px2rem(32);
+					margin-bottom: px2rem(27);
+					padding-top: px2rem(20);
+					text-align: left;
+				}
+				.n_t_i_para {
+					font-size: px2rem(24);
+					line-height: px2rem(34);
+					text-align: left;
+				}
+			}
+		}
+		.n_course_box {
+			margin: 0 px2rem(20);
+			background: #8fa9e4;
+			box-sizing: border-box;
+			padding-left: px2rem(20);
+			border-top: 1px solid #8fa9e4;
+			padding-bottom: px2rem(105);
+			.n_c_list {
+				width: px2rem(665);
+				height: px2rem(88);
+				.n_c_l_link {
+					width: 100%;
+					height: 100%;
+					display: block;
+					box-sizing: border-box;
+					border: 1px solid #9680cf;
+					border-radius: px2rem(10);
+					margin-top: px2rem(20);
+					background: #c2d0ef;
+					color: #8268b6;
+					font-size: px2rem(30);
+					line-height: px2rem(88);
+					text-align: left;
+					padding-left: px2rem(50);
+					position: relative;
+					left: 0;
+					top: 0;
+					overflow: hidden;
+					&:before {
+						content: '';
+						display: block;
+						position: absolute;
+						right: px2rem(26);
+						top: 50%;
+						margin-top: px2rem(-12);
+						width: px2rem(14);
+						height: px2rem(24);
+						background: url(#{$img}newSeason/course_arrow.png) no-repeat 0 0;
+						background-size: px2rem(14) px2rem(24);
+					}
+					&:after {
+						width: px2rem(90);
+						height: px2rem(33);
+						position: absolute;
+						right: 0;
+						top: 0;
+						content: '';
+						background: url(#{$img}newSeason/live.png) no-repeat 0 0;
+						background-size: px2rem(90) px2rem(33);
+						display: none;
+					}
+					&.live:after {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	.newSeason_alert {
+		background: rgba(0, 0, 0, 0.7);
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		.n_a_cont {
+			width: px2rem(640);
+			height: px2rem(534);
+			background: #fff;
+			border-radius: px2rem(10);
+			box-sizing: border-box;
+			padding-top: px2rem(70);
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: px2rem(-267) 0 0 px2rem(-320);
+			-webkit-animation: showAlert .3s;
+			-moz-animation: showAlert .3s;
+			-o-animation: showAlert .3s;
+			animation: showAlert .3s;
+			.close_btn {
+				width: px2rem(70);
+				height: px2rem(70);
+				position: absolute;
+				right: 0;
+				top: 0;
+				background: url(#{$img}newSeason/close_icon.png) no-repeat center center;
+				background-size: px2rem(20) px2rem(20);
+			}
+			.n_a_c_icon {
+				width: px2rem(120);
+				height: px2rem(120);
+				background: url(#{$img}newSeason/alert_right_icon.png) no-repeat 0 0;
+				background-size: 100%;
+				display: block;
+				margin: 0 auto px2rem(30);
+			}
+			.n_a_c_title {
+				font-size: px2rem(30);
+				color: #8765bb;
+				line-height: px2rem(30);
+				margin-bottom: px2rem(20);
+				text-align: center;
+			}
+			.n_a_c_para {
+				font-size: px2rem(28);
+				line-height: px2rem(28);
+				color: #6a6a6a;
+				text-align: center;
+			}
+			.n_a_c_btnBox {
+				margin-top: px2rem(70);
+				text-align: center;
+				.n_a_c_btn {
+					display: inline-block;
+					width: px2rem(258);
+					height: px2rem(90);
+					line-height: px2rem(90);
+					text-align: center;
+					font-size: px2rem(34);
+					color: #8765bb;
+					background: #ffdc19;
+					border-radius: px2rem(45);
+					&:first-child {
+						margin-right: px2rem(32);
+					}
+					&:last-child {
+						margin-left: px2rem(32);
+					}
+					&.cancel {
+						color: #fff;
+						background: #ccc;
+					}
+				}
+			}
+		}
+	}
+}
+.n_notice_wrapper {
+	display: block;
+	text-align: center;
+	.n_notice {
+		color: #8268b6;
+		font-size: px2rem(20);
+		line-height: px2rem(20);
+		text-align: center;
+		padding: px2rem(34) px2rem(50) px2rem(24);
+		display: inline-block;
+		position: relative;
+		left: 0;
+		top: 0;
+		&:before {
+			display: block;
+			position: absolute;
+			left: 0;
+			top: px2rem(42);
+			height: 1px;
+			width: px2rem(30);
+			background: #8268b6;
+			content: '';
+		}
+		&:after {
+			display: block;
+			position: absolute;
+			right: 0;
+			top: px2rem(42);
+			height: 1px;
+			width: px2rem(30);
+			background: #8268b6;
+			content: '';
+		}
+	}
+}

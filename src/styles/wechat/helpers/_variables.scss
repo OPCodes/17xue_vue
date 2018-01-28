@@ -1,0 +1,17 @@
+@charset "UTF-8";
+$lte7: true;
+$designWidth: 750;
+$img: './images/';
+@function px2rem( $px ){
+	@return $px*320/$designWidth/20 + rem;
+}
+// 通用变量
+$borderColor : #ebebeb;
+$commonRed   : #F95862;
+$specialRed  : #FF775A;
+$deepGrey    : #212121;
+$normalGrey  : #6F6F6F;
+$lightGrey   : #BDBDBD;
+$acPunchGreen: #51c08f;
+$acPunchYellow: #FFBF79;
+$acPunchGrey  : #ECFFFA;

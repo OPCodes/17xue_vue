@@ -1,0 +1,61 @@
+@charset "UTF-8";
+.xue_comp_dropdown {
+	width: px2rem(150);
+	color: #6F6F6F;
+	font-size: px2rem(28);
+	line-height: px2rem(80);
+	text-align: center;
+	border: px2rem(2) solid #F0F1F5;
+	border-radius: px2rem(10);
+	position: absolute;
+	top: px2rem(20);
+	background: #fff;
+	z-index: 1;
+	-webkit-transition: 0.3s all ease;
+	-moz-transition: 0.3s all ease;
+	-ms-transition: 0.3s all ease;
+	-o-transition: 0.3s all ease;
+	transition: 0.3s all ease;
+	-webkit-transform-origin: center 0;
+	-moz-transform-origin: center 0;
+	-ms-transform-origin: center 0;
+	-o-transform-origin: center 0;
+	transform-origin: center 0;
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+	-o-transform: scale(0);
+	transform: scale(0);
+	&.show {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+	&.left:before {
+		left: px2rem(30);
+	}
+	&.right:before {
+		right: px2rem(30);
+	}
+	&:before {
+		width: px2rem(28);
+		height: px2rem(20);
+		display: block;
+		content: '';
+		position: absolute;
+		right: 0;
+		top: px2rem(-18);
+		background: url(#{$img}dropdown/dropdown_arrow.png) no-repeat 0 0;
+		background-size: px2rem(28) px2rem(20);
+		// @include triangle(top, px2rem(20), $borderColor);
+	}
+	.xue_comp_dropdown_list {
+		height: px2rem(80);
+		background: #fff;
+		&.on {
+			background: #eaeaea;
+		}
+	}
+}

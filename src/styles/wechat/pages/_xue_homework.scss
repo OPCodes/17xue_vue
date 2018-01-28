@@ -1,0 +1,186 @@
+@charset "UTF-8";
+.xue_homework {
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		z-index: -1;
+	}
+	.info {
+		padding-top: px2rem(146);
+		height: px2rem(40);
+		line-height: px2rem(40);
+		font-size: px2rem(28);
+		color: #6F6F6F;
+		text-align: center;
+	}
+	.img-box {
+		width: px2rem(412);
+		margin: px2rem(95) auto 0;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.btn-result {
+		width: px2rem(556);
+		height: px2rem(86);
+		line-height: px2rem(90);
+		border: 1px solid #F95862;
+		border-radius: px2rem(45);
+		font-size: px2rem(30);
+		color: #F95862;
+		text-align: center;
+		margin: px2rem(50) auto 0;
+		&.subjective {
+			margin-top: px2rem(110);
+		}
+	}
+}
+.xue-report {
+	-webkit-text-size-adjust: none;
+	background-color: #fff;
+	.subject-box {
+		width: 100%;
+		.item {
+			border-top: 1px solid #979797;
+			padding: px2rem(60) px2rem(30) 0;
+			&:first-child {
+				border: none;
+				padding-top: px2rem(40);
+			}
+			img {
+				width: 100%;
+			}
+			.title {
+				line-height: px2rem(32);
+				font-size: px2rem(32);
+				color: #212121;
+			}
+			.content {
+				line-height: px2rem(45);
+				padding-bottom: px2rem(60);
+				font-size: px2rem(28);
+				color: #6F6F6F;
+				img {
+					margin-top: px2rem(20);
+				}
+			}
+		}
+		.studentWechat-wrapper {
+			padding: 0;
+			.studentWechat-head {
+				font-size: px2rem(28);
+				color: #858585;
+				line-height: px2rem(50);
+				font-weight: normal;
+				div {
+					line-height: px2rem(36);
+					color: #323232;
+					font-size: px2rem(26);
+				}
+			}
+			.studentWechat-optionsItem {
+				.itemQit {
+					line-height: px2rem(36);
+					color: #323232;
+					font-size: px2rem(26);
+				}
+			}
+			.studentWechat-optionsText {
+				margin-top: 0;
+				.inner {
+					width: 100%;
+					line-height: px2rem(36);
+					font-size: px2rem(26);
+				}
+				.inner-text {
+					margin-bottom: px2rem(20)!important;
+					.mod {
+						width: px2rem(26);
+						height: px2rem(26);
+						line-height: px2rem(26);
+						font-size: px2rem(18);
+						margin: px2rem(2) 0 0;
+						border: px2rem(2) #00aced solid;
+						border-radius: px2rem(8);
+					}
+				}
+				.blank {
+					margin: px2rem(6) 0 px2rem(5);
+					min-width: px2rem(80);
+					height: px2rem(30);
+					line-height: px2rem(30);
+					color: #43ba56;
+				}
+				li:after {
+					top: px2rem(0);
+					left: px2rem(-30);
+					width: px2rem(26);
+					height: px2rem(26);
+				}
+				.correct::after {
+					background: url($img + 'studentWechat-corret-ico.png') no-repeat center #4bd500;
+					background-size: px2rem(16) px2rem(15);
+					content: '';
+				}
+				.word {
+					padding: px2rem(8) px2rem(20);
+					span {
+						font-size: px2rem(26);
+						line-height: px2rem(30);
+						padding: 0 px2rem(20) 0 0;
+					}
+				}
+			}
+			.studentWechat-optionsChioce {
+				li {
+					font-size: px2rem(26);
+					line-height: px2rem(30);
+				}
+			}
+			.studentWechat-handCopy {
+				.hc-paragraph {
+					line-height: px2rem(36);
+					font-size: px2rem(26);
+					.text-main-content {
+						div:not(.w-stemImg) > img {
+							width: auto!important;
+							height: px2rem(40)!important;
+							margin-top: 0;
+						}
+					}
+				}
+				.hc-title {
+					font-size: px2rem(28);
+					color: #323232;
+					line-height: px2rem(50);
+					font-weight: normal;
+				}
+				.hc-mode, .hc-way {
+					font-size: px2rem(30);
+					line-height: px2rem(50);
+					.icon-photo {
+						width: px2rem(50);
+						height: px2rem(50);
+						background-size: contain;
+					}
+				}
+			}
+			.text-main-content {
+				p > img {
+					width: 100%!important;
+					height: auto!important;
+					&.formula-img {
+						width: auto !important;
+						height: px2rem(40)!important;
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+}

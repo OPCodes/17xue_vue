@@ -1,0 +1,115 @@
+@charset "UTF-8";
+.alert-shadow {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 999999;
+}
+.alert-cont {
+	width: px2rem(600);
+	min-height: px2rem(320);
+	background: #fff;
+	-webkit-border-radius: px2rem(10);
+	   -moz-border-radius: px2rem(10);
+	        border-radius: px2rem(10);
+	position: fixed;
+	z-index: 999999;
+	left: 50%;
+	top: 40%;
+	margin-left: px2rem(-300);
+	margin-top: px2rem(-160);
+	padding-top: px2rem(48);
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	-webkit-animation: showAlert .3s;
+	-moz-animation: showAlert .3s;
+	-o-animation: showAlert .3s;
+	animation: showAlert .3s;
+    .handle-box {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-top: 1px solid #CCCCCC;
+        width: 100%;
+        height: px2rem(90);
+        box-sizing: border-box;
+        .handle-btn {
+            color: #6F6F6F;
+            font-size: px2rem(30);
+            line-height: px2rem(90);
+            text-align: center;
+            outline: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: none;
+            box-sizing: border-box;
+            &.half {
+                float: left;
+                width: 50%;
+                &:last-child {
+                    border-left: 1px solid #CCCCCC;
+                    color: #F95862;
+                }
+            }
+        }
+    }
+    .cont-img {
+        width: px2rem(100);
+        height: px2rem(100);
+        margin: 0 auto px2rem(30);
+        display: block;
+    }
+    .avatar-img {
+        margin: 0 auto;
+        width: px2rem(100);
+        height: px2rem(100);
+        border-radius: 50%;
+        overflow: hidden;
+        .img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .avatar-tips {
+        text-indent: px2rem(30);
+        padding: px2rem(35) px2rem(45) px2rem(35);
+        font-size: px2rem(32);
+        color: #212121;
+        line-height: px2rem(44);
+    }
+	.cont-title {
+		font-size: px2rem(32);
+		color: #212121;
+		line-height: px2rem(32);
+		text-align: center;
+		font-weight: normal;
+        margin-bottom: px2rem(23);
+        &.para-null {
+            line-height: px2rem(140);
+        }
+	}
+	.cont-para {
+		color: #4c4b4f;
+		font-size: px2rem(28);
+		line-height: px2rem(40);
+		text-align: center;
+		margin: 0 auto;
+        padding: 0 px2rem(78);
+	}
+	.btn-box {
+		display: block;
+		text-align: center;
+		& > button {
+			display: inline-block;
+		}
+	}
+}
+

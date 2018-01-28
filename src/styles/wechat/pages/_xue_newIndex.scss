@@ -1,0 +1,538 @@
+@charset "UTF-8";
+body {
+	background: #F2F5F9;
+}
+i.goTop {
+	width: px2rem(70);
+	height: px2rem(70);
+	box-sizing: border-box;
+	border: 1px solid #E3E8EE;
+	background: url(#{$img}newIndex/top-icon.png) no-repeat center center rgba(255, 255, 255, 0.8);
+	border-radius: 50%;
+	position: fixed;
+	right: px2rem(30);
+	bottom: px2rem(30);
+}
+.xue_face {
+	.xf_navigator_static {
+		background: #fff;
+		height: px2rem(174);
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: flex;
+		box-sizing: border-box;
+		padding: px2rem(30) 0;
+		margin-bottom: px2rem(20);
+		.nav_col {
+			-webkit-box-flex: 1;
+			-webkit-flex: 1;
+			-moz-box-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+			padding: px2rem(22) px2rem(30) 0;
+			box-sizing: border-box;
+			&.courseCenter {
+				background: url(#{$img}newIndex/icon_courseCenter.png) no-repeat px2rem(260) center;
+				background-size: px2rem(74) px2rem(72);
+			}
+			&.myCenter {
+				background: url(#{$img}newIndex/icon_myCenter.png) no-repeat px2rem(260) center;
+				background-size: px2rem(82) px2rem(69);
+			}
+			.col_title {
+				color: #4A5060;
+				font-size: px2rem(34);
+				line-height: px2rem(34);
+			}
+			.col_para {
+				color: #9EA5B8;
+				font-size: px2rem(26);
+				line-height: px2rem(26);
+				margin-top: px2rem(7);
+			}
+			&:first-child {
+				border-right: 1px solid #E3E8EE;
+			}
+		}
+	}
+	.xf_navigator_float {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: px2rem(100);
+		border-bottom: 1px solid #E3E8EE;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: flex;
+		padding: px2rem(20) 0;
+		background: #fff;
+		box-sizing: border-box;
+		.nav-col {
+			-webkit-box-flex: 1;
+			-webkit-flex: 1;
+			-moz-box-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+			box-sizing: border-box;
+			text-align: center;
+			font-size: 0;
+			&:first-child {
+				border-right: 1px solid #E3E8EE;
+			}
+			.col-tit {
+				font-size: px2rem(34);
+				line-height: px2rem(34);
+				color: #4A5060;
+				vertical-align: middle;
+				display: inline-block;
+			}
+			.col-icon {
+				vertical-align: middle;
+				display: inline-block;
+				margin-left: px2rem(20);
+				&.courseCenter {
+					width: px2rem(57);
+					height: px2rem(56);
+					background: url(#{$img}newIndex/icon_courseCenter_float.png) no-repeat 0 0;
+					background-size: px2rem(57) px2rem(56);
+				}
+				&.myCenter {
+					width: px2rem(60);
+					height: px2rem(50);
+					background: url(#{$img}newIndex/icon_myCenter_float.png) no-repeat 0 0;
+					background-size: px2rem(60) px2rem(50);
+				}
+			}
+		}
+	}
+	.xf_banner_wrapper {
+	    overflow: hidden;
+	    position: relative;
+	    left: 0;
+	    top: 0;
+	    background: #fff;
+	    margin-bottom: px2rem(20);
+	    // height: px2rem(260);
+	    .course_list {
+	        // position: absolute;
+	        // left: 0;
+	        // top: 0;
+	        // height: 100%;
+	        width: 999999999px;
+	        .course_item {
+	            float: left;
+	            width: px2rem(750);
+	            padding-top: px2rem(40);
+	            .item_wrapper {
+	                display: block;
+	                height: 100%;
+	                text-align: center;
+	                position: relative;
+	                left: 0;
+	                top: 0;
+	                .item_label {
+	                	font-size: px2rem(24);
+	                	color: #fff;
+	                	line-height: px2rem(44);
+	                	height: px2rem(44);
+	                	padding: 0 px2rem(14) 0 px2rem(10);
+	                	border-radius: 0 px2rem(22) px2rem(22) 0;
+	                	background: rgba(0, 0, 0, 0.4);
+	                	position: absolute;
+	                	top: px2rem(24);
+	                	left: px2rem(30);
+	                }
+	            }
+	            .item_info {
+	                height: px2rem(70);
+	                line-height: px2rem(70);
+	                padding: 0 px2rem(30);
+	                .info_title {
+	                    color: #5C6681;
+	                    font-size: px2rem(30);
+	                    width: px2rem(430);
+	                    text-overflow: ellipsis;
+	                    overflow: hidden;
+	                    white-space: nowrap;
+	                    float: left;
+	                }
+	                .info_time {
+	                    color: #9EA5B8;
+	                    font-size: px2rem(24);
+	                    float: right;
+	                }
+	            }
+	            .pic {
+	                width: px2rem(690);
+	                height: px2rem(200);
+	                border-radius: px2rem(10);
+	            }
+	        }
+	    }
+	    .banner_dot {
+	        position: absolute;
+	        top: px2rem(240);
+	        left: 0;
+	        width: 100%;
+	        height: px2rem(8);
+	        text-align: center;
+	        z-index: 1;
+	        .swiper_pagination_bullet {
+	            display: inline-block;
+	            margin: 0 px2rem(7);
+	            width: px2rem(10);
+	            height: px2rem(10);
+	            border-radius: 50%;
+	            background: #fff;
+	        }
+	    }
+	}
+	.xf_courseProducts {
+		margin-bottom: px2rem(20);
+		.products-title {
+		    position: relative;
+		    width: 100%;
+		    height: px2rem(121);
+		    border-bottom: 1px solid #CCCCCC;
+		    background: #fff;
+		    .title {
+		        position: relative;
+		        margin-left: px2rem(30);
+		        padding-left: px2rem(60);
+		        width: px2rem(160);
+		        height: 100%;
+		        line-height: px2rem(130);
+		        font-size: px2rem(36);
+		        font-weight: normal;
+		        color: #000;
+		        .title-icon {
+		            position: absolute;
+		            left: px2rem(4);
+		            top: px2rem(45);
+		            width: px2rem(36);
+		            height: px2rem(38);
+		            background: url(#{$img}courseCenter/select-course-icon.png) no-repeat;
+		            background-size: 100% 100%;
+		        }
+		    }
+		    .open-course-title {
+		        position: relative;
+		        margin-left: px2rem(30);
+		        padding-left: px2rem(60);
+		        // width: px2rem(185);
+		        height: 100%;
+		        line-height: px2rem(122);
+		        font-size: px2rem(36);
+		        font-weight: normal;
+				color: #4A5060;
+		        .open-course-icon {
+		            position: absolute;
+		            left: 0;
+		            top: 50%;
+		            margin-top: px2rem(-22);
+		            width: px2rem(44);
+		            height: px2rem(44);
+		            background: url(#{$img}newIndex/open-course-icon.png) no-repeat left center;
+		            background-size: px2rem(44) px2rem(44);
+		            &.select-course-icon {
+		               background: url(#{$img}newIndex/select-course-icon.png) no-repeat left center;
+		               background-size: px2rem(44) px2rem(44);
+		            }
+		            &.extend-course-icon {
+		               background: url(#{$img}newIndex/extend-course-icon.png) no-repeat left center;
+		               background-size: px2rem(44) px2rem(35);
+		            }
+		            &.live-course-icon {
+		               background: url(#{$img}newIndex/live-course-icon.png) no-repeat left center;
+		               background-size: px2rem(44) px2rem(27);
+		            }
+		            &.rank-course-icon {
+		               background: url(#{$img}newIndex/rank-course-icon.png) no-repeat left center;
+		               background-size: px2rem(40) px2rem(39);
+		            }
+		        }
+		    }
+		    .more {
+		        position: absolute;
+		        top: 50%;
+		        right: px2rem(30);
+		        padding-right: px2rem(28);
+		        height: px2rem(44);
+		        line-height: px2rem(44);
+		        margin-top: px2rem(-22);
+		        font-size: px2rem(24);
+		        color: #9EA5B8;
+		        .more-icon {
+		            position: absolute;
+		            top: px2rem(10);
+		            right: 0;
+		            width: px2rem(11);
+		            height: px2rem(24);
+		            background: url(#{$img}courseCenter/more-icon.png) no-repeat;
+		            background-size: 100% 100%;
+		        }
+		    }
+		}
+		.products-wrapper {
+		    padding-left: px2rem(30);
+		    width: px2rem(720);
+		    background: #fff;
+		    overflow: hidden;
+		    .products-list {
+		        // margin-bottom: px2rem(150);
+		        .products-item {
+		            padding: px2rem(40) px2rem(30) px2rem(36) 0;
+		            width: px2rem(690);
+		            height: px2rem(154);
+		            // border-bottom: 1px solid #ccc;
+		            &.live-course {
+		            	.pic-wrapper {
+							.course-pic {
+								width: px2rem(200);
+								height: px2rem(200);
+								margin-top: px2rem(-25);
+							}
+		            	}
+		            }
+		            & > a {
+		                display: block;
+		            }
+		            &:last-child {
+		                border: none;
+		            }
+		            .pic-wrapper {
+		                padding-top: px2rem(4);
+		                margin-right: px2rem(20);
+		                height: px2rem(150);
+		                width: px2rem(200);
+		                position: relative;
+		                left: 0;
+		                top: 0;
+		                overflow: hidden;
+		                .course-pic {
+		                    width: px2rem(200);
+		                    height: px2rem(150);
+		                    border-radius: px2rem(8);
+		                }
+		                &.live:after {
+		                	content: '';
+		                	position: absolute;
+		                	left: px2rem(10);
+		                	bottom: px2rem(10);
+		                	width: px2rem(86);
+		                	height: px2rem(32);
+		                	background: url(#{$img}newIndex/live-icon.png) no-repeat 0 0;
+		                	background-size: px2rem(86) px2rem(32);
+		                }
+		            }
+		            .course-content {
+		                width: px2rem(470);
+		                height: px2rem(156);
+		                .top-wrapper {
+		                    margin-bottom: px2rem(14);
+		                    width: 100%;
+		                    height: px2rem(80);
+		                    .name {
+		                        width: px2rem(350);
+		                        height: px2rem(80);
+		                        line-height: px2rem(38);
+		                        font-size: px2rem(32);
+		                        // color: $parentGMTitleColor;
+		                        font-weight: bold;
+		                        overflow: hidden;
+		                    }
+		                    .card-l, .card-r {
+		                        display: block;
+		                        margin: px2rem(8) 0 0 px2rem(10);
+		                        width: px2rem(44);
+		                        height: px2rem(50);
+		                    }
+		                    .card-l {
+		                        background: url(#{$img}courseCenter/card-l-icon.png) no-repeat;
+		                        background-size: 100% 100%;
+		                    }
+		                    .card-r {
+		                        background: url(#{$img}courseCenter/card-r-icon.png) no-repeat;
+		                        background-size: 100% 100%;
+		                    }
+		                }
+		                .teacher-name {
+		                    margin-bottom: px2rem(2);
+		                    max-width: px2rem(350);
+		                    height: px2rem(30);
+		                    line-height: px2rem(30);
+		                    font-size: px2rem(24);
+		                    color: #98A4C7;
+		                    overflow: hidden;
+		                    white-space: nowrap;
+		                    text-overflow: ellipsis;
+		                }
+		                .date-price {
+		                    height: px2rem(30);
+		                    font-size: px2rem(22);
+		                    color: #C3CBE0;
+		                    span {
+		                        height: px2rem(30);
+		                        white-space: nowrap;
+		                        text-overflow: ellipsis;
+		                        overflow: hidden;
+		                        vertical-align: middle;
+		                    }
+		                    .date {
+		                        max-width: px2rem(250);
+		                        line-height: px2rem(30);
+		                    }
+		                    .real-price {
+		                        position: relative;
+		                        padding-left: px2rem(20);
+		                        margin-left: px2rem(10);
+		                        max-width: px2rem(90);
+		                        line-height: px2rem(28);
+		                        font-size: px2rem(32);
+		                        color: $specialRed;
+		                        &::before {
+		                            content: "￥";
+		                            position: absolute;
+		                            left: px2rem(-3);
+		                            top: 0;
+		                            width: px2rem(22);
+		                            height: px2rem(28);
+		                            font-size: px2rem(26);
+		                        }
+		                    }
+		                    .original-price {
+		                        max-width: px2rem(90);
+		                        line-height: px2rem(30);
+		                        text-decoration: line-through;
+		                    }
+		                    .tag {
+								max-width: px2rem(220);
+								white-space: nowrap;
+							    text-overflow: ellipsis;
+							    overflow: hidden;
+		                        line-height: px2rem(30);
+		                        font-size: px2rem(22);
+		                        color: $specialRed;
+		                    }
+		                }
+		            }
+		        }
+		    }
+		    .extend-wrapper {
+		    	width: px2rem(690);
+		    	overflow: hidden;
+		    	text-align: center;
+		    	padding-top: px2rem(40);
+		    	.extend-box {
+		    		margin-right: px2rem(-10);
+			    	height: px2rem(380);
+					.extend-col {
+						width: px2rem(340);
+						height: px2rem(180);
+						float: left;
+						margin-right: px2rem(10);
+						margin-bottom: px2rem(20);
+						background: #ECECEC;
+						border-radius: px2rem(10);
+					}
+		    	}
+		    }
+		    .rank-wrapper {
+		    	margin-bottom: px2rem(-12);
+		    	padding-top: px2rem(40);
+		    	font-size: 0;
+		    	.products-rank {
+		    		display: inline-block;
+		    		&.rank-top {
+		    			width: px2rem(690);
+		    			.rank-cover {
+		    				width: px2rem(690);
+		    				height: px2rem(200);
+		    			}
+		    		}
+		    		&.rank-normal {
+		    			width: px2rem(340);
+		    			margin-right: px2rem(10);
+		    			.rank-cover {
+		    				width: px2rem(340);
+		    				height: px2rem(255);
+		    			}
+		    		}
+		    		.rank-cover {
+		    			position: relative;
+		    			left: 0;
+		    			top: 0;
+		    			display: block;
+		    			.covers {
+		    				width: 100%;
+		    				height: 100%;
+		    				display: block;
+		    				border-radius: px2rem(10);
+		    			}
+		    			.rank-metal {
+		    				width: px2rem(45);
+		    				height: px2rem(45);
+		    				position: absolute;
+		    				right: px2rem(10);
+		    				top: px2rem(10);
+		    				&.metal1 {
+		    					background: url(#{$img}newIndex/rank1-icon.png) no-repeat 0 0;
+		    					background-size: 100%;
+		    				}
+		    				&.metal2 {
+		    					background: url(#{$img}newIndex/rank2-icon.png) no-repeat 0 0;
+		    					background-size: 100%;
+		    				}
+		    				&.metal3 {
+		    					background: url(#{$img}newIndex/rank3-icon.png) no-repeat 0 0;
+		    					background-size: 100%;
+		    				}
+		    			}
+		    			.view-box {
+		    				position: absolute;
+		    				left: px2rem(13);
+		    				bottom: px2rem(15);
+		    				// width: px2rem(164);
+		    				padding-right: px2rem(20);
+		    				height: px2rem(56);
+		    				border-radius: px2rem(30);
+		    				border: px2rem(2) solid rgba(255, 255, 255, 0.3);
+		    				background: url(#{$img}newIndex/view-icon.png) no-repeat px2rem(10) center rgba(0, 0, 0, 0.3);
+		    				text-indent: px2rem(60);
+		    				background-size: px2rem(36) px2rem(26);
+		    				color: #fff;
+		    				font-size: px2rem(36);
+		    				line-height: px2rem(56);
+							font-weight: bold;
+		    				-webkit-transform-origin: left bottom;
+							-moz-transform-origin: left bottom;
+							-ms-transform-origin: left bottom;
+							-o-transform-origin: left bottom;
+							transform-origin: left bottom;
+							-webkit-transform: scale(0.5);
+							-moz-transform: scale(0.5);
+							-ms-transform: scale(0.5);
+							-o-transform: scale(0.5);
+					        transform: scale(0.5);
+		    			}
+		    		}
+		    		.rank-name {
+		    			font-size: px2rem(30);
+		    			line-height: px2rem(30);
+		    			color: #5C6681;
+		    			padding-top: px2rem(20);
+		    			padding-bottom: px2rem(40);
+		    			text-overflow: ellipsis;
+		    			overflow: hidden;
+		    			white-space: nowrap;
+		    		}
+		    	}
+		    }
+		}
+	}
+}

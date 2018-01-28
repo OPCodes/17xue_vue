@@ -1,0 +1,932 @@
+.lessonReport {
+	-webkit-text-size-adjust:none;
+	.top {
+		width: 100%;
+		height: px2rem(300);
+		background: url(#{$img}lessonReport/lessonReport-top.png) no-repeat;
+		background-size: 100% 100%;
+		position: relative;
+		margin-bottom: px2rem(40);
+		.reportName {
+			font-size: px2rem(34);
+			line-height: px2rem(34);
+			text-align: center;
+			color: #fff;
+			padding-top: px2rem(36);
+		}
+		.courseName {
+			font-size: px2rem(22);
+			line-height: px2rem(22);
+			text-align: center;
+			color: #fff;
+			margin-top: px2rem(34);
+		}
+		.courseTime {
+			margin-top: px2rem(16);
+			font-size: px2rem(22);
+			line-height: px2rem(23);
+			color: #fff;
+			text-align: center;
+			.lecturer {
+				background: url(#{$img}lessonReport/lecturer-icon.png) no-repeat;
+				background-size: px2rem(21) px2rem(23);
+				padding-left: px2rem(31);
+				&.assistant {
+					background: url(#{$img}lessonReport/assistant-icon.png) 0 px2rem(2) no-repeat;
+					background-size: px2rem(22) px2rem(22);
+					padding-left: px2rem(32);
+					margin-left: px2rem(15);
+				}
+			}
+			.time {
+				margin-left: px2rem(16);
+			}
+		}
+		.avatar {
+			width: px2rem(120);
+			height: px2rem(120);
+			border-radius: 50%;
+			overflow: hidden;
+			position: absolute;
+			bottom: px2rem(-20);
+			left: 50%;
+			transform: translate(-50%, 0);
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.itemBox {
+		width: 100%;
+		background-color: #FFF;
+		margin-top: px2rem(20);
+		&.iconBox {
+			position: relative;
+			overflow: hidden;
+		}
+		.stateIcon {
+			position: absolute;
+			top: 0;
+			right: 0;
+			&.state1 {
+				width: px2rem(106);
+				height: px2rem(78);
+				background: url(#{$img}lessonReport/state1-icon.png) no-repeat;
+				background-size: 100% 100%;
+			}
+			&.state2 {
+				width: px2rem(106);
+				height: px2rem(86);
+				background: url(#{$img}lessonReport/state2-icon.png) no-repeat;
+				background-size: 100% 100%;
+			}
+			&.state3 {
+				width: px2rem(106);
+				height: px2rem(85);
+				background: url(#{$img}lessonReport/state3-icon.png) no-repeat;
+				background-size: 100% 100%;
+			}
+		}
+		.tit {
+			width: px2rem(690);
+			margin: 0 auto;
+			font-size: px2rem(32);
+			line-height: px2rem(32);
+			color: #212121;
+			padding-top: px2rem(31)
+		}
+		.content {
+			width: px2rem(690);
+			margin: px2rem(30) auto px2rem(28) auto;
+			font-size: px2rem(28);
+			line-height: px2rem(44);
+			color: #6F6F6F;
+			text-align: justify;
+			word-wrap:break-word;
+			.rightNum {
+				font-size: px2rem(34);
+				color: #6BC5D2;
+			}
+			.state {
+				font-size: px2rem(34);
+				line-height: px2rem(44);
+				&.blue {
+					color: #6BC5D2;
+				}
+				&.yellow {
+					color: #FFC677;
+				}
+				&.red {
+					color: #F95862;
+				}
+			}
+			.num {
+				font-size: px2rem(34);
+				line-height: px2rem(44);
+				color: #FFC677;
+			}	
+		}
+		.info {
+			border-top: solid 1px rgba(0, 0, 0, 0.1);
+			.circleChartBox {
+	    		margin-top: px2rem(48);
+	    		text-align: center;
+	    		position: relative;
+				.circleChart {
+	    			transform: rotate(180deg);
+				}
+				.circlePercent {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					margin-left: px2rem(-123);
+					margin-top: px2rem(-123);
+					width: px2rem(246);
+					height: px2rem(246);
+					color: #6F6F6F;
+					font-size: px2rem(24);
+					.text {
+						position: absolute;
+						top: 50%;
+						left: 20%;
+						margin-top: px2rem(-35);
+						line-height: px2rem(35);
+						text-align: center;
+						.num {
+							font-size: px2rem(28);
+							&.green {
+								color: #6BC5D2;
+							}
+						}
+					}
+				}
+			}
+			.complete-status {
+				padding-top: px2rem(48);
+				padding-bottom: px2rem(26);
+				padding-left: px2rem(104);
+				&.two {
+					padding-left: px2rem(190);
+				}
+				.status-list {
+					font-size: px2rem(24);
+					color: #6F6F6F;
+					margin-left: px2rem(40);
+					letter-spacing: px2rem(2);
+					&.green {
+						&:before {
+							content: "";
+							display: inline-block;
+							width: px2rem(12);
+							height: px2rem(12);
+							border-radius: 50%;
+							background: #6BC5D2;
+							margin-right: px2rem(12);
+						}
+						> span {
+							font-size: px2rem(32);
+							color: #6BC5D2;
+						}
+					}
+					&.red {
+						&:before {
+							content: "";
+							display: inline-block;
+							width: px2rem(12);
+							height: px2rem(12);
+							border-radius: 50%;
+							background: #F95862;
+							margin-right: px2rem(12);
+						}
+						> span {
+							font-size: px2rem(32);
+							color: #F95862;
+						}
+					}
+					&.black {
+						&:before {
+							content: "";
+							display: inline-block;
+							width: px2rem(12);
+							height: px2rem(12);
+							border-radius: 50%;
+							background: #E5E5E5;
+							margin-right: px2rem(12);
+						}
+						> span {
+							font-size: px2rem(32);
+							color: #212121;
+						}
+					}
+				}
+			}
+			.numInfo {
+				position: relative;
+				margin-left: px2rem(152);
+				margin-top: px2rem(52);
+				margin-bottom: px2rem(60);
+				.numPic {
+					width: px2rem(220);
+					height: px2rem(174);
+					background: url(#{$img}lessonReport/bottle.png) no-repeat;
+					background-size: 100% 100%;
+				}
+				.numTxt {
+					font-size: px2rem(24);
+					color: #6F6F6F;
+					line-height: px2rem(38);
+					margin-left: px2rem(54);
+					.number {
+						color: #FFC677;
+						font-size: px2rem(32);
+						line-height: px2rem(38);
+					}
+				}
+				.picToTxt {
+					width: px2rem(77);
+					height: px2rem(20);
+					background: url(#{$img}lessonReport/picToTxt-icon.png) no-repeat;
+					background-size: 100% 100%;
+					position: absolute;
+					left: px2rem(261);
+					top: px2rem(73);
+				}
+			}
+			.pyramid-box {
+				position: relative;
+				left: px2rem(152);
+				padding-bottom: px2rem(50);
+				font-size: px2rem(24);
+				color: #ABABAB;
+				.img-box {
+					position: relative;
+					.pic {
+						width: px2rem(240);
+						height: px2rem(219);
+					}
+					.rate-pic {
+						position: absolute;
+						height: auto;
+						top: -2px;
+						left: 50%;
+					}
+				}
+				.tip-box {
+					position: absolute;
+					padding-left: px2rem(22);
+					width: px2rem(300);
+					.tip-msg {
+						vertical-align: bottom;
+						padding-left: 22px;
+						span {
+							font-size: px2rem(32);
+						}
+					}
+					&::after {
+						content: '';
+						display: block;
+						margin-top: px2rem(18);
+						width: px2rem(75);
+						height: px2rem(20);
+					}
+				}
+				.legend {
+					text-align: right;
+					position: relative;
+					left: 130%;
+					font-size: px2rem(20);
+					color: #BDBDBD;
+					&::before {
+						content: '';
+						display: inline-block;
+						width: px2rem(10);
+						height: px2rem(10);
+						border-radius: 50%;
+						margin-right: px2rem(6);
+					}
+				}
+				&.blue {
+					.tip-box {
+						.tip-msg {
+							span {
+								color: #6BC5D2;
+							}
+						}
+						&::after {
+							background: url(#{$img}report/blue-right-round.png) no-repeat;
+							background-size: 100% 100%;
+						}
+					}
+					.legend::before {
+						background-color: #6BC5D2;
+					}
+				}
+				&.yellow {
+					.tip-box {
+						.tip-msg {
+							span {
+								color: #FFC677;
+							}
+						}
+						&::after {
+							background: url(#{$img}report/yellow-right-round.png) no-repeat;
+							background-size: 100% 100%;
+						}
+					}
+					.legend::before {
+						background-color: #FFC677;
+					}
+				}
+				&.red {
+					.tip-box {
+						.tip-msg {
+							span {
+								color: #F95862;
+							}
+						}
+						&::after {
+							background: url(#{$img}report/red-right-round.png) no-repeat;
+							background-size: 100% 100%;
+						}
+					}
+					.legend::before {
+						background-color: #F95862;
+					}
+				}
+			}
+			.percentInfo {
+				position: relative;
+				padding-bottom: px2rem(50);
+				.percentPic {
+					width: px2rem(240);
+					height: px2rem(219);
+					background-color: #49ACBA;
+					margin-left: px2rem(172);
+				}
+				.percentTxt {
+					width: px2rem(220);
+					position: absolute;
+					left: px2rem(374);
+					top: 0;
+					font-size: pxrem(24);
+					line-height: px2rem(38);
+					color: #6F6F6F;
+					.percent {
+						font-size: px2rem(32);
+						line-height: px2rem(38);
+						color: #6BC5D2;
+					}	
+				}
+				.picToTxt {
+					width: px2rem(76);
+					height: px2rem(20);
+					background: url(#{$img}lessonReport/picToTxt-percent-icon.png) no-repeat;
+					background-size: 100% 100%;
+					position: absolute;
+					left: px2rem(364);
+					top: px2rem(57);
+				}
+				.remark {
+					width: px2rem(184);
+					position: absolute;
+					bottom: px2rem(51);
+					right: px2rem(27);
+					font-size: px2rem(20);
+					line-height: px2rem(20);
+					color: #BDBDBD;
+				}
+				.remark::before {
+					content: '';
+					display: inline-block;
+					width: px2rem(12);
+					height: px2rem(12);
+					border-radius: 50%;
+					background-color: #6BC5D2;
+					margin-right: px2rem(8);
+				}
+			}
+			&.bottom {
+				padding-bottom: px2rem(42);
+			}
+			.grade-box {
+				width: px2rem(590);
+				margin: 0 auto;
+                border: 1px solid #E5EAF5;
+				.score-tab {
+					width: px2rem(590);
+					border-collapse:collapse;
+					border-spacing:0;
+                    overflow: hidden;
+                    border: 1px solid #E1E8E8;
+					text-align: center;
+					th, td {
+						padding: 0;
+					}
+					thead {
+						width: px2rem(590);
+						height: px2rem(88);
+						font-size: px2rem(28);
+						color: #212121;
+						line-height: px2rem(88);
+						border-bottom: 1px solid #E5EAF5;
+					}
+					tbody {
+						font-size: px2rem(24);
+						color: #6F6F6F;
+						line-height: px2rem(67);
+						tr:nth-of-type(1) {
+							td:nth-of-type(1) {
+								background: url(#{$img}lessonReport/first-icon.png) px2rem(44) px2rem(10) no-repeat;
+							}
+						}
+						tr:nth-of-type(2) {
+							td:nth-of-type(1) {
+								background: url(#{$img}lessonReport/second-icon.png) px2rem(44) px2rem(10) no-repeat;
+							}
+						}
+						tr:nth-of-type(3) {
+							td:nth-of-type(1) {
+								background: url(#{$img}lessonReport/third-icon.png) px2rem(44) px2rem(10) no-repeat;
+							}
+						}
+					}
+					tbody tr {
+						height: px2rem(67);
+                        display: table-row;
+                        vertical-align: inherit;
+                        border-color: inherit;
+						td {
+							height: px2rem(67);
+							line-height: px2rem(67);
+							border: 1px solid #E5EAF5;
+						}
+						td:nth-of-type(1) {
+							width: px2rem(119);
+						}
+						td:nth-of-type(2) {
+							width: px2rem(316);
+						}
+						&.own {
+							background-color: #F6F6F6;
+						}
+					}
+					.score-list {
+						display: inline-block;
+						font-size: px2rem(28);
+						color: #212121;
+						padding-left: 34px;
+						width: px2rem(223);
+						height: px2rem(88);
+						line-height: px2rem(88);
+						background: url(#{$img}lessonReport/golden-cup.png) 0 px2rem(25) no-repeat;
+					}
+				}
+			}
+			.anwserInfo {
+				.infoTit {
+					font-size: px2rem(30);
+					line-height: px2rem(30);
+					color: #212121;
+					margin-left: px2rem(31);
+					margin-top: px2rem(25);
+				}
+				.anwserList {
+					width: px2rem(630);
+					margin: px2rem(30) auto px2rem(24) auto;
+					.anwser {
+						margin-bottom: px2rem(35);
+						.box {
+							width: px2rem(80);
+							height: px2rem(80);
+							border-radius: 50%;
+							background-color: #E1E8EB;
+							position: relative;
+							&.noAnswer {
+								.resultText {
+									font-size: px2rem(20);
+								}
+							}
+						}
+						.half {
+							width: 50%;
+							height: 100%;
+							float: left;
+							position: absolute;
+							overflow: hidden;
+							top: 0;
+							.circle {
+								position: absolute;
+								width: 200%;
+								height: 100%;
+								background-color: #6BC5D2;
+								border-radius: 50%;
+								top: 0;
+								transform-origin: center center;
+							}
+							&.left {
+								left: 0;
+								.circle {
+									left: 0;
+									clip: rect(auto,px2rem(40),auto,auto);
+								}
+							}
+							&.right {
+								right: 0;
+								.circle {
+									right: 0;
+									clip: rect(auto,auto,auto,px2rem(40));
+								}
+							}
+						}
+						.resultText {
+							position: absolute;
+							top: px2rem(4);
+							left: px2rem(4);
+							width: px2rem(72);
+							height: px2rem(72);
+							line-height: px2rem(72);
+							text-align: center;
+							border-radius: 50%;
+							background-color: #fff;
+							font-size: px2rem(24);
+							color: #6BC5D2;
+							&.two {
+								height: px2rem(60);
+								font-size: px2rem(22);
+								line-height: px2rem(26);
+								text-align: center;
+								padding-top: px2rem(12);
+							}
+						}
+						.result {
+							width: px2rem(80);
+							height: px2rem(80);
+							border-radius: 50%;
+							font-size: px2rem(24);
+							line-height: px2rem(80);
+							text-align: center;
+							color: #fff;
+							&.right {
+								background-color: #6BC5D2;
+							}
+							&.toLongNum {
+								font-size: px2rem(20);
+								height: px2rem(67);
+								line-height: px2rem(30);
+								padding-top: px2rem(13)
+							}
+							&.twoNum {
+								font-size: px2rem(22);
+								line-height: px2rem(30);
+								height: px2rem(67);
+								width: px2rem(70);
+								padding: px2rem(13) px2rem(5) 0 px2rem(5);
+							}
+							&.false {
+								background-color: #F95862;
+							}
+							&.nothing {
+								background-color: #E5E5E5;
+							}	
+							&.two {
+								line-height: px2rem(30);
+								text-align: center;
+								padding-top: px2rem(5);
+							}
+						}
+						.indexNum {
+							width: px2rem(80);
+							font-size: px2rem(22);
+							line-height: px2rem(30);
+							margin-top: px2rem(12);
+							text-align: center;
+							color: #6F6F6F;
+						}
+					}
+					.anwser:nth-child(4n-2) {
+						margin-left: px2rem(100);
+						margin-right: px2rem(110);
+					}
+					.anwser:nth-child(4n-1) {
+						margin-right: px2rem(99);
+					}
+				}
+				&.classPercentInfo {
+					.anwserList {
+						.anwser {
+							.result {
+								border: px2rem(4) solid #6BC5D2;
+								box-sizing: border-box;
+								color: #6BC5D2;
+							}
+						}
+					}
+				}
+			}
+			.bot-content {
+				width: px2rem(700);
+				margin: 0 auto;
+				padding-top: px2rem(100);
+				padding-bottom: px2rem(50);
+				.attend-situ {
+					position: relative;
+					.progress-wrapper {
+						position: relative;
+						padding: px2rem(38) px2rem(16) 0;
+						height: px2rem(80);
+						.line-group {
+							.vertical-line-short {
+								position: absolute;
+								top: 55px;
+								width: 1px;
+								height: 10px;
+								background: #E1E8EB;
+								&:nth-of-type(1) {
+									left: 42px;
+								}
+								&:nth-of-type(2) {
+									left: 216px;
+								}
+								&:nth-of-type(3) {
+									left: 303px;
+								}
+								&:nth-of-type(4) {
+									left: 390px;
+								}
+								&:nth-of-type(5) {
+									left: 477px;
+								}
+								&:nth-of-type(6) {
+									left: 564px;
+								}
+								&:nth-of-type(7) {
+									left: 730px;
+								}
+							}
+							.vertical-line-long {
+								position: absolute;
+								top: px2rem(20);
+								width: 1px;
+								height: px2rem(47);
+								background: #E1E8EB;
+								&:nth-of-type(1) {
+									left: px2rem(115);
+								}
+								&:nth-of-type(2) {
+									right: px2rem(120);
+								}
+							}
+						}
+						.center {
+							position: relative;
+							width: px2rem(650);
+							height: px2rem(12);
+							background: #F95862;
+							border-radius: px2rem(10);
+							span {
+								position: absolute;
+								top: 0;
+								height: px2rem(12);
+							}
+							.left {
+								left: 0;
+								width: px2rem(99);
+								border-radius: px2rem(10) 0 0 px2rem(10);
+								background: #6BC5D2;
+							}
+							.right {
+								right: 0;
+								width: px2rem(88);
+								border-radius: 0 px2rem(10) px2rem(10) 0;
+								background: #FFC677;
+							}
+						}
+					}
+					.time-box {
+						width: px2rem(90);
+						text-align: center;
+						font-weight: normal;
+						span {
+							display: block;
+						}
+						.time {
+							font-size: px2rem(24);
+							line-height: px2rem(28);
+							color: #3F3C3C;
+						}
+						.con {
+							font-size: px2rem(20);
+							line-height: px2rem(26);
+							color: #7D7D7E;
+						}
+						.std {
+							width: px2rem(31);
+							height: px2rem(35);
+							margin: 0 auto px2rem(30);
+						}
+					}
+					.start-box {
+						position: absolute;
+						left: px2rem(70);
+						top: px2rem(-60);
+					}
+					.finish-box {
+						position: absolute;
+						right: px2rem(80);
+						top: px2rem(-60);
+					}
+					.step-box {
+						position: absolute;
+						left: px2rem(8);
+						bottom: 0;
+						.blue-std {
+							background: url(#{$img}lessonReport/std-icon-blue.png) no-repeat;
+						}
+					}
+					.leave-box {
+						position: absolute;
+						right: px2rem(12);
+						bottom: 0;
+						.orange-std {
+							background: url(#{$img}lessonReport/std-icon-orange.png) no-repeat;
+						}
+					}
+					&.step {
+						.progress-wrapper {
+							.blue-std {
+								display: block;
+							}
+						}
+						.step-box {
+							display: block;
+						}
+						&.step-normal {
+							.progress-wrapper {
+								.blue-std {
+									left: px2rem(113);
+								}
+							}
+							.step-box {
+								left: px2rem(96);
+							}
+						}
+						&.step-late {
+							.progress-wrapper {
+								.blue-std {
+									left: px2rem(152);
+								}
+								.center .left {
+									width: px2rem(182);
+								}
+							}
+							.step-box {
+								left: px2rem(152);
+							}
+						}
+					}
+					&.leave {
+						.progress-wrapper {
+							.orange-std {
+								display: block;
+							}
+						}
+						.leave-box {
+							display: block;
+						}
+						&.leave-normal {
+							.progress-wrapper {
+								.orange-std {
+									right: px2rem(111);
+								}
+							}
+							.leave-box {
+								right: px2rem(93);
+							}
+						}
+						&.leave-late {
+							.progress-wrapper {
+								.orange-std {
+									right: px2rem(158);
+								}
+								.center .right {
+									width: px2rem(165);
+								}
+							}
+							.leave-box {
+								right: px2rem(158);
+							}
+						}
+					}
+				}
+			}
+		}
+		.voiceBox {
+			width: px2rem(690);
+			margin: px2rem(30) auto 0 auto;
+			padding-bottom: px2rem(46);
+			.avatarPic {
+				width: px2rem(80);
+				height: px2rem(80);
+				border-radius: 50%;
+				overflow: hidden;
+				margin-top: px2rem(11);
+				img {
+					width: 100%;
+				}
+			}
+			.voice {
+				.name {
+					font-size: px2rem(28);
+					line-height: px2rem(28);
+					color: #6F6F6F;
+					margin-left: px2rem(20);
+				}
+				.play-box {
+					width: px2rem(595);
+					height: px2rem(106);
+					margin-top: px2rem(19);
+					margin-left: px2rem(15);
+					background: url(#{$img}lessonReport/audio-bg.png) no-repeat;
+					.audio-box {
+						width: px2rem(580);
+						// margin-top: px2rem(29);
+						margin-left: px2rem(10);
+					}
+				}
+			}
+		}
+		.picBox {
+			width: px2rem(690);
+			height: px2rem(452);
+			margin: px2rem(40) auto 0 auto;
+			padding-bottom: px2rem(50);
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.txtBox {
+			width: px2rem(690);
+			margin: px2rem(30) auto 0 auto;
+			padding-bottom: px2rem(50);
+			font-size: px2rem(28);
+			color: #7D7D7E;
+			position: relative;
+			.boxTit {
+				line-height: px2rem(48);
+			}
+			.txtList {
+				.txtcont {
+					line-height: px2rem(40);
+				}
+			}
+		}
+	}
+	.bottomBox {
+		width: 100%;
+		height: px2rem(191);
+		background-color: #FFF;
+		position: relative;
+		.teacherInfo {
+			position: absolute;
+			width: 100%;
+			top: px2rem(50);
+			right: px2rem(21);
+			.teacherName {
+				.teachee {
+					font-size: px2rem(24);
+					line-height: px2rem(64);
+					color: #7D7D7E;
+				}
+				.sgin-left {
+					width: px2rem(34);
+					height: px2rem(64);
+					background: url(#{$img}lessonReport/sgin-left.png) no-repeat;
+					background-size: 100% 100%;
+				}
+				.author {
+					font-size: px2rem(28);
+					line-height: px2rem(64);
+					color: #7D7D7E;
+					background: url(#{$img}lessonReport/sgin-line.png);
+					background-size: 100% 100%;
+				}
+				.sgin-rigth {
+					width: px2rem(34);
+					height: px2rem(64);
+					background: url(#{$img}lessonReport/sgin-right.png) no-repeat;
+					background-size: 100% 100%;
+				}
+			}
+			.date {
+				font-size: px2rem(24);
+				line-height: px2rem(24);
+				color: #7D7D7E;
+				text-align: right;
+				margin-top: px2rem(10);
+			}
+		}
+	}
+	
+}

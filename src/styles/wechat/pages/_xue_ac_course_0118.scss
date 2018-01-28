@@ -1,0 +1,74 @@
+@charset "UTF-8";
+.course-select{
+    .img-head {
+        width: 100%;
+    }
+    .course {
+        padding: px2rem(16) px2rem(50) px2rem(40) px2rem(50);
+        background-color: #ffe169;
+        .each-box {
+            width: px2rem(610);
+            height: px2rem(265);
+            padding: px2rem(35) 0 0 px2rem(40);
+            border-radius: px2rem(24);
+            color: #c99037;
+            font-size: px2rem(24);
+            margin-bottom: px2rem(20);
+            .com {
+                padding-left: px2rem(10);
+                font-size: px2rem(24);
+                line-height: px2rem(24);
+            }
+            .tit {
+                font-size: px2rem(44);
+                line-height: px2rem(44);
+                font-weight: 500;
+            }
+            .desc1 {
+                padding-top: px2rem(20);
+            }
+            .desc2 {
+                padding-top: px2rem(8);
+            }
+            .date {
+                padding-top: px2rem(18);
+            }
+            .bot-btn {
+                display: block;
+                width: px2rem(250);
+                height: px2rem(56);
+                margin-top: px2rem(25);
+                background-color: #a246f4;
+                font-size: px2rem(24);
+                text-align: center;
+                line-height: px2rem(56);
+                color: #fff;
+                border-radius: px2rem(28);
+                &.disable {
+                    background-color: #c0bebe;
+                }
+            }
+            &.chinese {
+                background: url(#{$img}ac_0118/chinese.png) no-repeat px2rem(265) center #fff3c3;
+                background-size: px2rem(385) auto;
+            }
+            &.math {
+                background: url(#{$img}ac_0118/math.png) no-repeat px2rem(365) px2rem(72) #fff3c3;
+                background-size: px2rem(260) auto;
+            }
+            &.english {
+                background: url(#{$img}ac_0118/english.png) no-repeat px2rem(340) center #fff3c3;
+                background-size: px2rem(286) auto;
+            }
+        }
+    }
+    .cover-bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #ffe169;
+        z-index: -1;
+    }
+}

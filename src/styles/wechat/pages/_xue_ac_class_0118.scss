@@ -1,0 +1,76 @@
+@charset "UTF-8";
+.step{
+    background-color: #ffe169;
+    .img-head {
+        width: 100%;
+    }
+    .class-select {
+    padding: 0 px2rem(50) px2rem(40);
+    .class-box {
+        width: px2rem(610);
+        height: px2rem(130);
+        padding: px2rem(50) 0 px2rem(50) px2rem(40);
+        margin-top: px2rem(40);
+        background-color: #fff3c3;
+        border-radius: px2rem(14);
+        .line-one {
+            color: #f6541c;
+            font-size: px2rem(24);
+            .tit {
+                font-size: px2rem(36);
+                line-height: px2rem(36);
+                font-weight: 500;
+                color: #c99037;
+                padding-right: px2rem(8);
+            }
+            .decoration {
+                text-decoration: line-through;
+            }
+            .price {
+                font-weight: 500;
+                padding-left: px2rem(18);
+            }
+            .new-price {
+                font-size: px2rem(30);
+                font-weight: 500;
+            }
+        }
+        .apply-box {
+            .desc-box {
+                max-width: px2rem(360);
+                p {
+                    font-size: px2rem(24);
+                    line-height: px2rem(24);
+                    color: #c99037;
+                    &.desc-one {
+                        padding-top: px2rem(30);
+                    }
+                    &.desc-two {
+                        padding-top: px2rem(16);
+                    }
+                }
+            }
+            .apply {
+                width: px2rem(220);
+                height: px2rem(60);
+                background-color: #a246f4;
+                font-size: px2rem(24);
+                color: #fff;
+                border-radius: px2rem(30);
+                margin: px2rem(36) px2rem(30) 0 0;
+                text-align: center;
+                line-height: px2rem(60);
+            }
+        }
+    }
+}
+    .cover-bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #ffe169;
+        z-index: -1;
+    }
+}

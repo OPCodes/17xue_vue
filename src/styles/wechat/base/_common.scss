@@ -1,0 +1,38 @@
+﻿@charset "UTF-8";
+//通用样式
+html {
+	height: 100%;
+}
+body {
+	position: relative;
+	left: 0;
+	bottom: 0;
+	height: auto;
+	min-height: 100%;
+	_height: 100%;
+	overflow-x: visible;
+	background: #F2F5F9;
+	&.white {
+		background: #fff;
+	}
+	&.autumn {
+		background-image: -moz-linear-gradient( 90deg, rgb(208,235,255) 0%, rgb(152,176,254) 98%);
+		background-image: -webkit-linear-gradient( 90deg, rgb(208,235,255) 0%, rgb(152,176,254) 98%);
+		background-image: -ms-linear-gradient( 90deg, rgb(208,235,255) 0%, rgb(152,176,254) 98%);
+	}
+}
+.xue_section {
+	margin-bottom: px2rem(20);
+	background: #fff;
+	padding-bottom: px2rem(40);
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+
+$parentGMTitleColor: #4F5D84;
+
+

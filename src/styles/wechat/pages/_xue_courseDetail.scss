@@ -1,0 +1,452 @@
+@charset "UTF-8";
+.xue_courseDetail {
+	.detail-head {
+		background: #fff;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 5;
+		.img-box {
+			position: relative;
+			height: px2rem(260);
+			background: #D8D8D8;
+			.pic {
+				width: 100%;
+				height: 100%;
+				display: block;
+			}
+			& > img {
+				width: 100%;
+				height: 100%;
+				display: block;
+			}
+			.play {
+				width: px2rem(100);
+				height: px2rem(100);
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: url(#{$img}courseDetail/playIcon.png) no-repeat;
+				background-size: 100% 100%;
+			}
+		}
+		.videoItem {
+			position: relative;
+			*::--webkit-media-controls-play-button {
+				display: none!important;
+				-webkit-appearance: none;
+			}
+			*::-webkit-media-controls-start-playback-button {
+				display: none!important;
+				-webkit-appearance: none;
+			}
+			.video {
+				width: 100%;
+				height: px2rem(260);
+			}
+			.play {
+				width: px2rem(100);
+				height: px2rem(100);
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: url(#{$img}courseDetail/playIcon.png) no-repeat;
+				background-size: 100% 100%;
+			}
+
+		}
+		.nav-box {
+			border-bottom: 1px solid $borderColor;
+			padding: 0 px2rem(30);
+			.nav-list {
+				list-style: none;
+				height: px2rem(90);
+				line-height: px2rem(90);
+				text-align: center;
+				font-size: px2rem(30);
+				color: #4A4A4A;
+				&.two {
+					width: 50%;
+				}
+				&.three {
+					width: 33.33%;
+				}
+				&.on {
+					.nav-text {
+						box-sizing: border-box;
+						display: inline-block;
+						height: px2rem(90);
+						padding: 0 px2rem(15);
+						border-bottom: 2px solid $commonRed;
+						color: $commonRed;
+					}
+				}
+				.nav-text {
+					box-sizing: border-box;
+					display: inline-block;
+					height: px2rem(90);
+					padding: 0 px2rem(15);
+				}
+			}
+		}
+	}
+	.detail-body {
+		background: #fff;
+		box-sizing: border-box;
+		position: absolute;
+		top: px2rem(351);
+		bottom: 0;
+		left: 0;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		width: 100%;
+		z-index: 4;
+		padding-bottom: px2rem(100);
+		.course-intro {
+			padding: px2rem(30);
+			img {
+				width: 100%;
+			}
+		}
+		.joinGroup {
+			position: fixed;
+			right: px2rem(30);
+			bottom: px2rem(140);
+			width: px2rem(90);
+			height: px2rem(90);
+			a {
+				display: block;
+				width: px2rem(90);
+				height: px2rem(90);
+				img {
+					width: px2rem(90);
+					height: px2rem(90);
+				}
+			}
+		}
+		.schedule-intro {
+			padding: px2rem(30);
+			.content {
+				margin-left: px2rem(20);
+				.course-box {
+					.course-list {
+						border-left: 1px solid $borderColor;
+						padding-left: px2rem(52);
+						padding-bottom: px2rem(45);
+						position: relative;
+						&:last-child {
+							border-left: none;
+						}
+						.left-txt {
+							width: px2rem(604);
+							&.has-btn-ing {
+								width: px2rem(454);
+							}
+							&.openType h4, &.openType p {
+								overflow: hidden;
+								text-overflow: ellipsis;
+								white-space: nowrap;
+							}
+						}
+						.right-btn {
+							width: px2rem(150);
+							height: px2rem(46);
+							box-sizing: border-box;
+							border-radius: px2rem(23);
+							border: 1px solid #6F6F6F;
+							font-size: px2rem(22);
+							// line-height: px2rem(46);
+							text-align: center;
+							color: #6F6F6F;
+							background: none;
+							outline: none;
+							&.on {
+								color: #F95862;
+								border: 1px solid #F95862;
+							}
+							&:disabled {
+								color: #BDBDBD;
+								border: 1px solid #BDBDBD;
+							}
+						}
+						&.last {
+							border: none;
+						}
+						.num-icon-bg {
+							display: inline-block;
+							width: px2rem(64);
+							height: px2rem(64);
+							position: absolute;
+							left: px2rem(-32);
+							top: px2rem(-12);
+							background: #fff;
+							z-index: 6;
+							.num-icon {
+								position: absolute;
+								left: 50%;
+								top: 50%;
+								margin-left: px2rem(-23);
+								margin-top: px2rem(-23);
+								width: px2rem(46);
+								height: px2rem(46);
+								line-height: px2rem(46);
+								border-radius: 50%;
+								background: #FFBF79;
+								text-align: center;
+								vertical-align: middle;
+								z-index: 7;
+								i {
+									font-style: normal;
+									font-size: px2rem(24);
+									color: #fff;
+								}
+							}
+						}
+						h4 {
+							font-size: px2rem(26);
+							color: $deepGrey;
+							font-weight: normal;
+							line-height: px2rem(32);
+							padding-bottom: px2rem(16);
+							max-height: 999999px;
+						}
+						p {
+							font-size: px2rem(22);
+							color: $lightGrey;
+							line-height: px2rem(28);
+							text-overflow:ellipsis;
+							white-space:nowrap;
+							overflow:hidden;
+							&.openType {
+								overflow: hidden;
+								text-overflow: ellipsis;
+								white-space: nowrap;
+							}
+						}
+					}
+				}
+			}
+		}
+		.relateCourses-intro {
+			padding: 0 0 px2rem(30) px2rem(30);
+			.relateCourses-box {
+				.relateCourses-list {
+					position: relative;
+					border-bottom: 1px solid $borderColor;
+					padding: px2rem(42) px2rem(30) px2rem(32) 0;
+					&.last {
+						border: none;
+					}
+					.left-img {
+						width: px2rem(200);
+						height: px2rem(150);
+						border-radius: px2rem(10);
+						overflow: hidden;
+						background: #D8D8D8;
+						img {
+							width: 100%;
+							height: 100%;
+							border: none;
+						}
+					}
+					.right-info {
+						margin-left: px2rem(200);
+						.title-part {
+							h4 {
+								margin-left: px2rem(26);
+								width: px2rem(336);
+								font-size: px2rem(30);
+								line-height: px2rem(40);
+								color: $deepGrey;
+								overflow : hidden;
+	                         	-o-text-overflow: ellipsis;
+	                            text-overflow: ellipsis;
+	                         	display: -webkit-box;
+	                         	-webkit-line-clamp: 2;
+	                         	-webkit-box-orient: vertical;
+							}
+							.icon-box {
+								margin-top: px2rem(5);
+								i {
+									display: inline-block;
+									width: px2rem(44);
+									height: px2rem(50);
+									margin-left: px2rem(10);
+									&.blue {
+										background: url(#{$img}courseDetail/blue_icon.png) no-repeat;
+										background-size: 100% 100%;
+									}
+									&.orange {
+										background: url(#{$img}courseDetail/orange_icon.png) no-repeat;
+										background-size: 100% 100%;
+									}
+								}
+							}
+						}
+						.info-part {
+							.info-cont {
+								width: px2rem(280);
+								position: absolute;
+								bottom: px2rem(32);
+								left: px2rem(226);
+								.teacher {
+									font-size: px2rem(24);
+									line-height: px2rem(42);
+									color: $normalGrey;
+									text-overflow:ellipsis;
+									white-space:nowrap;
+									overflow:hidden;
+								}
+								.time {
+									font-size: px2rem(22);
+									line-height: px2rem(22);
+									color: $lightGrey;
+									text-overflow:ellipsis;
+									white-space:nowrap;
+									overflow:hidden;
+								}
+							}
+							.payment {
+								position: absolute;
+								bottom: px2rem(32);
+								right: px2rem(28);
+								.originalPrice {
+									font-size: px2rem(22);
+									color: $lightGrey;
+									text-decoration: line-through;
+									margin-left: px2rem(10);
+									&:before {
+										content: "¥";
+										margin-right: px2rem(4);
+									}
+								}
+								.presentPrice {
+									font-size: px2rem(30);
+									color: $specialRed;
+									&:before {
+										content: "¥";
+										font-size: px2rem(26);
+										margin-right: px2rem(5);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.cir-bg {
+		box-sizing: content-box;
+		position: fixed;
+		left: px2rem(33);
+		bottom: px2rem(34);
+		z-index: 98;
+		display: inline-block;
+		width: px2rem(95);
+		height: px2rem(95);
+		background: #fff;
+		border-radius: 50%;
+		border: 1px solid $borderColor;
+	}
+	.detail-footer {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		z-index: 99;
+		width: 100%;
+		height: px2rem(100);
+		line-height: px2rem(100);
+		border-top: 1px solid $borderColor;
+		background: #fff;
+		.footer-inline {
+			// margin-left: px2rem(35);
+			// margin-top: -2px;
+			width: px2rem(95);
+			height: px2rem(100);
+			position: absolute;
+			left: px2rem(33);
+			top: 0;
+			.copy-circle {
+				box-sizing: content-box;
+				position: absolute;
+				left: 1px;
+				bottom: px2rem(34);
+				display: inline-block;
+				width: px2rem(95);
+				height: px2rem(95);
+				background: #fff;
+				border-radius: 50%;
+			}
+			.infer-icon {
+				position: absolute;
+				left: 50%;
+				margin-left: px2rem(-27);
+				top: px2rem(-14);
+				display: inline-block;
+				width: px2rem(54);
+				height: px2rem(86);
+				background: url(#{$img}s_inline_refer.png) no-repeat center;
+				background-size: 100% 100%;
+			}
+		}
+		.footer-btn {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			font-size: px2rem(30);
+			color: #fff;
+			text-align: center;
+			background: $commonRed;
+			&.small {
+				width: px2rem(251)!important;
+				height: px2rem(100);
+			}
+			&.middle {
+				width: px2rem(340)!important;
+				height: px2rem(100);
+			}
+			&.disabled {
+				background: #cbc8cb!important;
+			}
+		}
+		.footer-text {
+			padding-left: px2rem(160);
+			&.no {
+				padding-left: px2rem(30);
+			}
+			font-size: px2rem(26);
+			.booking {
+				color: $normalGrey;
+			}
+			.payment {
+				color: #4A4A4A;
+				.originalPrice {
+					font-size: px2rem(22);
+					color: $lightGrey;
+					text-decoration: line-through;
+					margin-left: px2rem(16);
+					&:before {
+						content: "¥";
+						margin-right: px2rem(2);
+					}
+				}
+				.presentPrice {
+					font-size: px2rem(36);
+					color: $specialRed;
+					&.txt:before {
+						content: '';
+					}
+					&:before {
+						content: "¥";
+						font-size: px2rem(26);
+						margin-right: px2rem(5);
+					}
+				}
+			}
+		}
+	}
+}

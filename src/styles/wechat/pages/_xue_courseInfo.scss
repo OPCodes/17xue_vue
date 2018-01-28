@@ -1,0 +1,191 @@
+@charset "UTF-8";
+.xue_courseDetail {
+	background: #fff;
+	.course_info {
+		padding: px2rem(32) 0 0;
+		.course_tit {
+			padding: 0 px2rem(30);
+			font-size: px2rem(33);
+			color: #000;
+			line-height: px2rem(38);
+			margin-bottom: px2rem(17);
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.course_time {
+			padding: 0 px2rem(30);
+			color: $normalGrey;
+			font-size: px2rem(26);
+			line-height: px2rem(40);
+			margin-bottom: px2rem(30);
+			.time_date, .time_week, .time_clock {
+				float: left;
+			}
+			.time_week {
+				margin-left: px2rem(30);
+				margin-right: px2rem(10);
+			}
+		}
+		.teacher_info_wrapper {
+			padding: 0 px2rem(30);
+			height: px2rem(130);
+			padding-bottom: px2rem(30);
+			.teacher_info {
+				border: 1px solid #f0f1f5;
+				border-radius: px2rem(8);
+				height: px2rem(130);
+				text-align: center;
+				.teacher_icon {
+					width: px2rem(105);
+					height: px2rem(101);
+					display: inline-block;
+					vertical-align: middle;
+					border-radius: 50%;
+				}
+				.info_father {
+					display: inline-block;
+					width: px2rem(144);
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					vertical-align: middle;
+					height: 100%;
+					line-height: px2rem(34);
+					padding-top: px2rem(34);
+					box-sizing: border-box;
+				}
+				.teacher_name {
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					font-size: px2rem(24);
+					color: #4A4A4A;
+					margin: 0 px2rem(10) 0 px2rem(15);
+				}
+				.teacher_type {
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					font-size: px2rem(22);
+					color: #9B9B9B;
+				}
+			}
+			&.one {
+				.teacher_info {
+				}
+			}
+			&.two {
+				.teacher_info {
+					width: px2rem(330);
+					&:first-child {
+						float: left;
+					}
+					&:last-child {
+						float: right;
+					}
+				}
+			}
+		}
+		.service_wrapper {
+			&.two {
+				.service_list {
+					height: px2rem(108);
+					margin-left: px2rem(30);
+					border-top: 1px solid $borderColor;
+					font-size: px2rem(28);
+					color: $normalGrey;
+					line-height: px2rem(108);
+					padding-left: px2rem(54);
+					display: block;
+					position: relative;
+					left: 0;
+					top: 0;
+					.txt_right {
+						font-size: px2rem(24);
+						color: #a5a5a5;
+						line-height: px2rem(108);
+						position: absolute;
+						height: 100%;
+						top: 0;
+						right: px2rem(30);
+						background: url(#{$img}course_arrow.png) no-repeat right center;
+						background-size: px2rem(11) px2rem(24);
+						padding-right: px2rem(40);
+						&.null {
+							background: none;
+						}
+					}
+					&.qq {
+						background: url(#{$img}qq.png) no-repeat left center;
+						background-size: px2rem(44) px2rem(44);
+					}
+					&.wechat {
+						background: url(#{$img}wechat.png) no-repeat left center;
+						background-size: px2rem(44) px2rem(44);
+					}
+					&.lecture {
+						background: url(#{$img}lecture.png) no-repeat left center;
+						background-size: px2rem(32) px2rem(37);
+					}
+					&.order {
+						background: url(#{$img}order.png) no-repeat left center;
+						background-size: px2rem(34) px2rem(34);
+					}
+					&.report {
+						background: url(#{$img}course_report.png) no-repeat left center;
+						background-size: px2rem(39) px2rem(37);
+					}
+				}
+			}
+			&.three .service_list {
+				width: 33.33%;
+			}
+			&.four .service_list {
+				width: 25%;
+			}
+			&.three, &.four {
+				width: px2rem(690);
+				text-align: center;
+				margin: 0 auto;
+				.service_list {
+					float: left;
+					text-align: center;
+					color: $lightGrey;
+					font-size: px2rem(24);
+					line-height: px2rem(24);
+					padding-bottom: px2rem(45);
+					.service_icon {
+						width: 100%;
+						height: px2rem(52);
+						display: block;
+						&.qq {
+							background: url(#{$img}qq.png) no-repeat top center;
+							background-size: px2rem(44) px2rem(44);
+						}
+						&.wechat {
+							background: url(#{$img}wechat.png) no-repeat top center;
+							background-size: px2rem(44) px2rem(44);
+						}
+						&.lecture {
+							background: url(#{$img}lecture.png) no-repeat top center;
+							background-size: px2rem(32) px2rem(37);
+						}
+						&.order {
+							background: url(#{$img}order.png) no-repeat top center;
+							background-size: px2rem(34) px2rem(34);
+						}
+						&.more {
+							background: url(#{$img}more.png) no-repeat top center;
+							background-size: px2rem(40) px2rem(10);
+						}
+						&.report {
+							background: url(#{$img}course_report.png) no-repeat top center;
+							background-size: px2rem(39) px2rem(37);
+						}
+					}
+				}
+			}
+		}
+	}
+}

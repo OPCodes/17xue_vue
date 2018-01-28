@@ -1,0 +1,526 @@
+@charset "UTF-8";
+
+$commonReportBlueColor: #6BC5D2;
+$commonReportGreyColor: #6F6F6F;
+.s-course-report {
+	-webkit-text-size-adjust:none;
+	.header {
+		width: px2rem(750);
+		height: px2rem(306);
+		background: url(#{$img}courseReport/bg_header.png) no-repeat center;
+		background-size: 100%;
+		margin-bottom: px2rem(36);
+		color: #fff;
+		text-align: center;
+		.title {
+			padding: px2rem(46) 0 px2rem(31);
+			font-size: px2rem(34);
+			.bold {
+				font-weight: bold;
+			}
+		}
+		.desc {
+			font-size: px2rem(22);
+			line-height: px2rem(22);
+			padding-bottom: px2rem(17);
+			.master {
+				&:before {
+					content: '';
+					display: inline-block;
+					width: px2rem(24);
+					height: px2rem(24);
+					background: url(#{$img}courseReport/r_master.png) no-repeat left;
+					background-size: 100% 100%;
+					margin-right: px2rem(8);
+					vertical-align: middle;
+				}
+			}
+			.caster {
+				&:before {
+					content: '';
+					display: inline-block;
+					width: px2rem(21);
+					height: px2rem(23);
+					background: url(#{$img}courseReport/r_caster.png) no-repeat left;
+					background-size: 100% 100%;
+					margin-right: px2rem(8);
+					vertical-align: middle;
+				}
+				margin-right: px2rem(25);
+			}
+		}
+		.student-img {
+			width: px2rem(120);
+			height: px2rem(120);
+			border: 2px solid #fff;
+			border-radius: 50%;
+			margin: px2rem(23) auto 0;
+			overflow: hidden;
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.report-list {
+		background: #fff;
+		margin-bottom: px2rem(18);
+		padding: px2rem(40) px2rem(30) px2rem(50);
+		.header-tit {
+			font-size: px2rem(32);
+			line-height: px2rem(32);
+			color: #212121;
+			font-weight: normal;
+		}
+		.desc {
+			font-size: px2rem(28);
+			line-height: px2rem(42);
+			color: $commonReportGreyColor;
+			padding-top: px2rem(30);
+			padding-bottom: px2rem(47);
+			&.prizePd {
+				padding-top: px2rem(67);
+			}
+			.num {
+				font-size: px2rem(34);
+				&.orange {
+					color: #FFC677;
+				}
+				&.blue {
+					color: $commonReportBlueColor;
+				}
+				&.red {
+					color: #F95862;
+				}
+			}
+		}
+		.r-star {
+			width: px2rem(455);
+			height: px2rem(174);
+			margin: 0 auto;
+			background: url(#{$img}courseReport/r_starfish.png) no-repeat left;
+			background-size: px2rem(338) px2rem(174);
+			text-align: right;
+			.desc {
+				font-size: px2rem(24);
+				line-height: px2rem(32);
+				color: $commonReportGreyColor;
+				padding-top: px2rem(25);
+				.num {
+					font-size: px2rem(32);
+					&.orange {
+						color: #FFC677;
+					}
+					&.blue {
+						color: $commonReportBlueColor;
+					}
+					&.red {
+						color: #F95862;
+					}
+				}
+			}
+		}
+		.r-prize {
+			width: px2rem(183);
+			height: px2rem(234);
+			box-sizing: border-box;
+			margin: 0 auto;
+			background: url(#{$img}courseReport/r_prize.png) no-repeat center;
+			background-size: 100% 100%;
+			text-align: center;
+			padding-top: px2rem(96);
+		}
+		.study-status {
+			margin-top: px2rem(12);
+			margin-left: px2rem(15);
+			.status-box {
+				.status-list {
+					&.last {
+						.lines-box {
+							.line {
+								height: px2rem(170);
+							}
+						}
+					}
+					.lines-box {
+						position: relative;
+						top: px2rem(27);
+						left: 0;
+						.num-icon {
+							position: absolute;
+							display: inline-block;
+							width: px2rem(30);
+							height: px2rem(30);
+							border-radius: 50%;
+							background: $commonReportBlueColor;
+							text-align: center;
+							line-height: px2rem(30);
+							font-size: px2rem(20);
+							color: #fff;
+							margin-left: px2rem(-14);
+							margin-top: px2rem(5);
+							z-index: 1;
+						}
+						.line {
+							position: absolute;
+							top: px2rem(7);
+							left: 0;
+							z-index: 0;
+							display: block;
+							height: px2rem(230);
+							width: 1px;
+							background: $commonReportBlueColor;
+						}
+					}
+					.status-cont {
+						margin-top: px2rem(19);
+						width: px2rem(640);
+						height: px2rem(192);
+						box-sizing: border-box;
+						padding: 0 px2rem(20);
+						background: #F6F6F6;
+						border-radius: px2rem(8);
+						position: relative;
+						left: 0;
+						top: 0;
+						&:before {
+							content: '';
+							display: inline-block;
+							border: px2rem(10) solid transparent;
+							border-right: px2rem(10) solid #F6F6F6;
+							position: absolute;
+							left: px2rem(-20);
+							top: px2rem(12);
+						}
+						.status-tit {
+							font-size: px2rem(28);
+							line-height: px2rem(28);
+							color: #212121;
+							border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+							.tit {
+								padding: px2rem(24) 0 px2rem(18);
+								max-width: px2rem(500);
+								text-overflow:ellipsis;
+								white-space:nowrap;
+								overflow:hidden;
+								&.no {
+									&:after {
+										content: '未';
+										display: inline-block;
+										width: px2rem(28);
+										height: px2rem(28);
+										border-radius: 50%;
+										text-align: center;
+										line-height: px2rem(28);
+										background: rgba(0, 0, 0, 0.1);
+										font-size: px2rem(18);
+										color: #ABABAB;
+										margin-left: px2rem(10);
+										vertical-align: top;
+									}
+								}
+							}
+							.txt {
+								width: px2rem(100);
+								padding: px2rem(24) 0 px2rem(18);
+								text-align: right;
+								&.orange {
+									color: #FFC677;
+								}
+								&.blue {
+									color: $commonReportBlueColor;
+								}
+								&.red {
+									color: #F95862;
+								}
+							}
+						}
+						.status-desc {
+							font-size: px2rem(24);
+							line-height: px2rem(24);
+							color: $commonReportGreyColor;
+							padding: px2rem(30) 0;
+							.desc-box {
+								&.four {
+									.desc-list {
+										width: px2rem(149);
+									}
+								}
+								.desc-list {
+									width: px2rem(199);
+									text-align: center;
+									.text {
+										padding-bottom: px2rem(19);
+									}
+									&.no {
+										color: #BDBDBD;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.voice-box {
+			margin-top: px2rem(40);
+			.teach-img {
+				display: inline-block;
+				width: px2rem(80);
+				height: px2rem(80);
+				border-radius: 50%;
+			}
+			.resource {
+				width: px2rem(590);
+				.teach-name {
+					font-size: px2rem(28);
+					line-height: px2rem(28);
+					color: $commonReportGreyColor;
+					padding-bottom: px2rem(16);
+				}
+				.play-box {
+					// margin-top: px2rem(16);
+					// height: px2rem(80);
+					// background: #F6F6F6;
+					// border-radius: px2rem(10);
+					// overflow: hidden;
+					// position: relative;
+					.play-row {
+						height: px2rem(65);
+						.audio {
+							width: 100%;
+						}
+					}
+					// &:before {
+					// 	content: '';
+					// 	display: inline-block;
+					// 	position: absolute;
+					// 	top: px2rem(10);
+					// 	left: px2rem(-12);
+					// 	border: px2rem(5) solid transparent;
+					// 	border-right: px2rem(10) solid #F6F6F6;
+					// }
+				}
+				.audio-box {
+					width: px2rem(595);
+					height: px2rem(106);
+					margin-top: px2rem(20);
+					border-radius: px2rem(10);
+					background: url(#{$img}courseReport/audioBox-bg.png) no-repeat 0 0;
+					background-size: 100% 100%;
+					.play-btn {
+						width: px2rem(65);
+						height: px2rem(65);
+						float: left;
+						margin-top: px2rem(22);
+						margin-left: px2rem(22);
+						margin-right: px2rem(20);
+						background: url(#{$img}courseReport/playBtn-bg.png) no-repeat 0 0;
+						background-size: 100% 100%;
+						-webkit-appearance: none;
+						&.pause {
+							background: url(#{$img}courseReport/playBtn-pause-bg.png) no-repeat 0 0;
+							background-size: 100% 100%;
+						}
+					}
+					.bar-wrapper {
+						float: left;
+						width: px2rem(465);
+						position: relative;
+						left: 0;
+						top: 0;
+						margin-top: px2rem(48);
+						height: px2rem(11);
+						background: #E5E5E5;
+						border-radius: px2rem(4);
+						.bar {
+							height: 100%;
+							display: block;
+							background: #FFC677;
+						}
+						.point {
+							position: absolute;
+							left: 0;
+							top: 50%;
+							width: px2rem(50);
+							height: px2rem(50);
+							margin-left: px2rem(-25);
+							margin-top: px2rem(-25);
+							&:after {
+								content: '';
+								width: px2rem(24);
+								height: px2rem(24);
+								background: #FFC677;
+								border-radius: 50%;
+								position: absolute;
+								left: 0;
+								top: 0;
+								left: 50%;
+								top: 50%;
+								margin-left: px2rem(-12);
+								margin-top: px2rem(-12);
+							}
+						}
+					}
+				}
+				.time-box {
+					color: #6F6F6F;
+					font-size: px2rem(20);
+					text-align: right;
+					width: 100%;
+					line-height: px2rem(20);
+					margin-top: px2rem(10);
+				}
+			}
+		}
+		.img-box {
+			width: px2rem(690);
+			margin: px2rem(37) auto 0;
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.ask-box {
+			font-size: px2rem(28);
+			color: #7D7D7E;
+			padding-top: px2rem(39);
+			.tit {
+				padding: px2rem(39) 0 px2rem(18);
+			}
+			.ask-list {
+				line-height: px2rem(38);
+			}
+		}
+		.signature {
+			// padding-top: px2rem(40);
+			font-size: px2rem(24);
+			color: #7D7D7E;
+			.role-sign {
+				.role {
+					height: px2rem(66);
+					line-height: px2rem(66);
+				}
+				.sign-c {
+					height: px2rem(66);
+					line-height: px2rem(66);
+					text-align: center;
+					font-size: px2rem(28);
+					font-weight: bold;
+					background: url(#{$img}courseReport/r_sign_c.png);
+					background-size: 100% 100%;
+					overflow: hidden;
+				}
+				.sign-l {
+					width: px2rem(49);
+					height: px2rem(66);
+					background: url(#{$img}courseReport/r_sign_l.png) no-repeat center;
+					background-size: 100% 100%;
+				}
+				.sign-r {
+					width: px2rem(43);
+					height: px2rem(66);
+					line-height: px2rem(66);
+					background: url(#{$img}courseReport/r_sign_r.png) no-repeat center;
+					background-size: 100% 100%;
+				}
+			}
+			.time {
+				font-size: px2rem(24);
+				line-height: px2rem(48);
+				height: px2rem(48);
+				text-align: right;
+			}
+		}
+		.circleChartBox {
+    		text-align: center;
+    		position: relative;
+			.circleChart {
+    			transform: rotate(180deg);
+			}
+			.circlePercent {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: px2rem(-123);
+				margin-top: px2rem(-123);
+				width: px2rem(246);
+				height: px2rem(246);
+				color: #6F6F6F;
+				font-size: px2rem(24);
+				.text {
+					position: absolute;
+					top: 50%;
+					left: 30%;
+					margin-top: px2rem(-35);
+					line-height: px2rem(35);
+					text-align: center;
+					.num {
+						font-size: px2rem(28);
+						&.blue {
+							color: $commonReportBlueColor;
+						}
+					}
+				}
+			}
+		}
+		.complete-status {
+			padding-top: px2rem(48);
+			margin-right: px2rem(20);
+			.status-list {
+				font-size: px2rem(24);
+				color: #BDBDBD;
+				margin-left: px2rem(40);
+				letter-spacing: px2rem(2);
+				&.blue {
+					&:before {
+						content: "";
+						display: inline-block;
+						width: px2rem(12);
+						height: px2rem(12);
+						border-radius: 50%;
+						background: $commonReportBlueColor;
+						margin-right: px2rem(12);
+					}
+					> span {
+						font-size: px2rem(32);
+						color: $commonReportBlueColor;
+					}
+				}
+				&.orange {
+					&:before {
+						content: "";
+						display: inline-block;
+						width: px2rem(12);
+						height: px2rem(12);
+						border-radius: 50%;
+						background: #FFC677;
+						margin-right: px2rem(12);
+					}
+					> span {
+						font-size: px2rem(32);
+						color: #FFC677;
+					}
+				}
+				&.red {
+					&:before {
+						content: "";
+						display: inline-block;
+						width: px2rem(12);
+						height: px2rem(12);
+						border-radius: 50%;
+						background: #F95862;
+						margin-right: px2rem(12);
+					}
+					> span {
+						font-size: px2rem(32);
+						color: #F95862;
+					}
+				}
+			}
+		}
+	}
+}
+

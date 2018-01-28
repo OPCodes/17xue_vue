@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+.wechat-material-flow {
+    padding-top: px2rem(20);
+    .express-info-wrapper {
+        margin-bottom: px2rem(10);
+        padding: px2rem(30);
+        background: #fff;
+        .left-pic {
+            margin-right: px2rem(23);
+            width: px2rem(130);
+            height: px2rem(130);
+        }
+        .right-info {
+            font-size: px2rem(26);
+            color: #BDBDBD;
+            p {
+                max-width: px2rem(530);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .name-info {
+                margin-bottom: px2rem(12);
+                height: px2rem(38);
+                line-height: px2rem(38);
+                font-size: px2rem(30);
+                color: #212121;
+            }
+            .express-info {
+                height: px2rem(44);
+                line-height: px2rem(44);
+            }
+            .tele-info {
+                height: px2rem(44);
+                line-height: px2rem(44);
+            }
+        }
+    }
+    .experss-list {
+        position: relative;
+        margin-bottom: px2rem(20);
+        padding: px2rem(30) px2rem(30) px2rem(25);
+        min-height: px2rem(508);
+        font-size: px2rem(26);
+        background: #fff;
+        .top-cover {
+            position: absolute;
+            left: px2rem(30);
+            top: px2rem(22);
+            width: px2rem(690);
+            height: px2rem(6);
+            background: #fff;
+            z-index: 3;
+        }
+        .item {
+            position: relative;
+            min-height: px2rem(76);
+            color: #BDBDBD;
+            .date-box {
+                margin-top: px2rem(-4);
+                margin-right: px2rem(10);
+                width: px2rem(70);
+                min-height: px2rem(50);
+                line-height: px2rem(26);
+                text-align: right;
+                .date {
+                    display: block;
+                    font-size: px2rem(24);
+                }
+                .time {
+                    display: block;
+                    font-size: px2rem(18);
+                }
+            }
+            .delivery-info {
+                position: relative;
+                margin-top: px2rem(-6);
+                padding-left: px2rem(30);
+                padding-bottom: px2rem(50);
+                border-left: 1px solid #BDBDBD;
+                width: px2rem(575);
+                min-height: px2rem(36);
+                line-height: px2rem(36);
+                .dot {
+                    position: absolute;
+                    left: px2rem(-10);
+                    top: px2rem(4);
+                    width: px2rem(19);
+                    height: px2rem(19);
+                    border-radius: 50%;
+                    background: #BDBDBD;
+                    z-index: 2;
+                }
+            }
+            &:last-child {
+                .delivery-info {
+                    border-left: none;
+                }
+            }
+        }
+
+        .active {
+            color: #FFA13A;
+            .delivery-info {
+                .dot {
+                    background: #FFA13A;
+                }
+            }
+        }
+    }
+    &.logistics_empty {
+        position: relative;
+        .packing_box {
+            position: absolute;
+            left: px2rem(240);
+            top: px2rem(234);
+            width: px2rem(270);
+            height: px2rem(222);
+            background: url(#{$img}/packing_box.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .info {
+            text-align: center;
+            padding: px2rem(469) px2rem(30) px2rem(70) px2rem(30);
+            font-size: px2rem(22);
+            font-family: "PingFang SC";
+            color: #6F6F6F;
+            letter-spacing: 0.23px;
+            line-height: 40px;
+        }
+    }
+}
