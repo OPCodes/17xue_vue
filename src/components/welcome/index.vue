@@ -25,7 +25,7 @@
 		    	<router-link tag="div" class="core_col core_courseCenter" to="/courseCenter">
 		    		<h3 class="core_title">选课中心</h3>
 		    	</router-link>
-		    	<router-link tag="div" class="core_col core_courseCenter" to="/courseCenter">
+		    	<router-link tag="div" class="core_col core_courseCenter" to="/">
 		    		<h3 class="core_title">学习中心</h3>
 		    	</router-link>
 		    </div>

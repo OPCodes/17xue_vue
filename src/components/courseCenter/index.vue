@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="background: #fff;">
 		<top-navi></top-navi>
 		<section class="xueFirst longTop">
 		    <!-- <div class="course-banner swiper-container" id="swiper-container">
@@ -35,7 +35,8 @@
 			return {
 				courses: [],
 				page: 0,
-				totalPage: 1
+				totalPage: 1,
+				params: null
 			};
 		},
 		methods: {
@@ -50,7 +51,9 @@
 				});
 			},
 			_getFtl() {
-				getFtlParams();
+				getFtlParams().then(res => {
+					this.params = res;
+				});
 			}
 		},
 		created() {
@@ -67,9 +70,6 @@
 <style lang="scss">
 	@import '../../common/styles/helpers.scss';
 
-	body {
-		background: #fff;
-	}
 	.xueFirst {
 		-webkit-text-size-adjust:none;
 		font-weight: normal;

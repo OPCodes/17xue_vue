@@ -11,7 +11,7 @@
 	            </div>
 	            <div class="teacherItem clearfix">
 	                <div class="courseSelectedTeacher fl" v-if="item.teacherImage">
-	                    <img v-url="item.teacherImage">
+	                    <img class="pic_small" v-url="item.teacherImage">
 	                </div>
 	                <div class="teacherName fl">{{item.teacherName}}</div>
 	            </div>
