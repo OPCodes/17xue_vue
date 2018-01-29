@@ -156,4 +156,7 @@
 	}
 </script>
 
-<style scoped lang="scss" src="./_welcome.scss"></style>
+<style lang="scss">
+	@import '../../common/styles/wechat.scss';
+	@import './_welcome.scss';
+</style>
