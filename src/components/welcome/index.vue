@@ -43,31 +43,33 @@
 		    	:btnLink="'/'"
 		    ></notice>
 
-		    <div class="liveRecommend">
+		    <div class="liveRecommend" v-if="openList.length > 0">
 		        <div class="liveTitleItem">
 		            <div class="live-title">直播课推荐</div>
 		            <a class="liveMore" href="javascript:void(0);"></span></a>
 		        </div>
-		        <div class="courseRecommendWrapper" id="courseRecommendWrapper">
-		            <div class="courseRecommendList clearfix" id="courseRecommendList">
-		                <div class="courseRecommendItem fl" v-for="item in openList" :class="recommendItemBgMap[item.subject]">
-		                    <a class="toBlock" href="javascript:void(0);">
-		                        <div class="live_comm live_time" v-date="{ timestamp: item.startTime, format: 'YYYY.MM.DD HH:mm' }"></div>
-		                        <div class="live_comm live_courseName">{{item.name}}</div>
-		                        <div class="live_comm live_teacherName">{{item.teacherName || '北美外教'}}</div>
-		                        <div class="live_comm live_state">
-		                            <div class="marquee-wrapper">
-		                                <p class="marquee">正在直播中</p>
-		                            </div>
-		                        </div>
-		                        <div class="live_comm live_state">预约：{{item.viewCount}}人</div>
-		                        <div class="teacherPic">
-		                            <img class="tPic" v-url="item.teacherImage">
-		                        </div>
-		                    </a>
-		                </div>
-		            </div>
-		        </div>
+		        <scroll class="courseRecommendWrapper"
+		        	:dir="'x'"
+		        >
+		        	<div class="courseRecommendList clearfix">
+		        		<div class="courseRecommendItem fl" v-for="item in openList" :class="recommendItemBgMap[item.subject]">
+		        		    <a class="toBlock" href="javascript:void(0);">
+		        		        <div class="live_comm live_time" v-date="{ timestamp: item.startTime, format: 'YYYY.MM.DD HH:mm' }"></div>
+		        		        <div class="live_comm live_courseName">{{item.name}}</div>
+		        		        <div class="live_comm live_teacherName">{{item.teacherName || '北美外教'}}</div>
+		        		        <div class="live_comm live_state">
+		        		            <div class="marquee-wrapper">
+		        		                <p class="marquee">正在直播中</p>
+		        		            </div>
+		        		        </div>
+		        		        <div class="live_comm live_state">预约：{{item.viewCount}}人</div>
+		        		        <div class="teacherPic">
+		        		            <img class="tPic" v-url="item.teacherImage">
+		        		        </div>
+		        		    </a>
+		        		</div>
+		        	</div>
+		        </scroll>
 		    </div>
 
 		    <!-- <div class="liveRecommend openCourseRankings">
@@ -119,6 +121,7 @@
 <script>
 	import { ajax } from '@/common/js/utils';
 	import Slider from '@/components/base/slider';
+	import Scroll from '@/components/base/scroll';
 	import Notice from '@/components/notice';
 	import CourseList from '@/components/course-list';
 
@@ -191,7 +194,8 @@
 		components: {
 			Slider,
 			Notice,
-			CourseList
+			CourseList,
+			Scroll
 		}
 	}
 </script>
