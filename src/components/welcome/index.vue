@@ -43,32 +43,32 @@
 		    	:btnLink="'/'"
 		    ></notice>
 
-		    <!-- <div class="liveRecommend">
+		    <div class="liveRecommend">
 		        <div class="liveTitleItem">
 		            <div class="live-title">直播课推荐</div>
 		            <a class="liveMore" href="javascript:void(0);"></span></a>
 		        </div>
 		        <div class="courseRecommendWrapper" id="courseRecommendWrapper">
 		            <div class="courseRecommendList clearfix" id="courseRecommendList">
-		                <div class="courseRecommendItem fl">
+		                <div class="courseRecommendItem fl" v-for="item in openList" :class="recommendItemBgMap[item.subject]">
 		                    <a class="toBlock" href="javascript:void(0);">
-		                        <div class="live_comm live_time"></div>
-		                        <div class="live_comm live_courseName">外教带你趣学英语</div>
-		                        <div class="live_comm live_teacherName">华夏</div>
+		                        <div class="live_comm live_time" v-date="{ timestamp: item.startTime, format: 'YYYY.MM.DD HH:mm' }"></div>
+		                        <div class="live_comm live_courseName">{{item.name}}</div>
+		                        <div class="live_comm live_teacherName">{{item.teacherName || '北美外教'}}</div>
 		                        <div class="live_comm live_state">
 		                            <div class="marquee-wrapper">
 		                                <p class="marquee">正在直播中</p>
 		                            </div>
 		                        </div>
-		                        <div class="live_comm live_state">预约：773479792人</div>
+		                        <div class="live_comm live_state">预约：{{item.viewCount}}人</div>
 		                        <div class="teacherPic">
-		                            <img src="">
+		                            <img class="tPic" v-url="item.teacherImage">
 		                        </div>
 		                    </a>
 		                </div>
 		            </div>
 		        </div>
-		    </div> -->
+		    </div>
 
 		    <!-- <div class="liveRecommend openCourseRankings">
 		        <div class="liveTitleItem">
@@ -97,7 +97,10 @@
 		            <div class="live-title" style="-webkit-tap-highlight-color:rgba(255,255,255,0);">精选课程</div>
 		            <a class="liveMore" href="javascript:void(0);"></span></a>
 		        </div>
-		        <course-list :list="selectList"></course-list>
+		        <course-list
+		        	:list="selectList"
+		        	@scrollPastEnd="loadMore"
+		        ></course-list>
 		    </div>
 		</section>
 
@@ -110,7 +113,6 @@
 		        <p class="avatar-tips"></p>
 		    </div>
 		</div>
-
 	</div>
 </template>
 
@@ -124,14 +126,24 @@
 		data() {
 			return {
 				sliders: [],
-				selectList: []
+				selectList: [],
+				page: 0,
+				selectList: [],
+				openList: [],
+				recommendItemBgMap: {
+					1: 'englishBg',
+					2: 'authBg',
+					3: 'chineseBg'
+				}
 			};
 		},
 		methods: {
 		    _getIndexList() {
 		        ajax({ url: '/api/indexlist.vpage', type: 'post' })
 	        	.then(res => {
-	        	    console.log(res);
+	        		if(res.success) {
+	        			this.openList = res.data.openList;
+	        		}
 	        	}).catch(err => {
 	        	    console.info('ajax error', err);
 	        	});
@@ -145,6 +157,7 @@
 	        	});
 		    },
 		    _getSelectList(page) {
+		    	this.selectListFlag = true;
 		        ajax({
 		        	url: '/api/course/open/selectedcourselist.vpage',
 		        	type: 'post',
@@ -154,20 +167,26 @@
 			    })
 	        	.then(res => {
 	        	    if(res.success) {
-	        	    	this.selectList = res.data.selectedCourseList.content;
+	        	    	this.selectList = this.selectList.concat(res.data.selectedCourseList.content);
 	        	    	this.totalPages = res.data.selectedCourseList.totalPages;
+	        	    	this.page = res.data.selectedCourseList.number;
 	        	    }
+	        	    this.selectListFlag = false;
 	        	}).catch(err => {
+	        	    this.selectListFlag = false;
 	        	    console.info('ajax error', err);
 	        	});
+		    },
+		    loadMore() {
+		    	if(this.selectListFlag) return;
+		    	this.page += 1;
+		    	this._getSelectList(this.page);
 		    }
 		},
 		created() {
-		    // this._getIndexList();
+		    this._getIndexList();
 		    this._getSliderList();
-		    setTimeout(() => {
-		    	this._getSelectList(0);
-		    }, 0);
+		    this._getSelectList(this.page);
 		},
 		components: {
 			Slider,

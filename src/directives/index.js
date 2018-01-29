@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export default {
 	'url': {
 		bind(el, {value}) {
@@ -16,6 +18,12 @@ export default {
 			} catch(e) {
 				throw('error: ', 2);
 			}
+		}
+	},
+	'date': {
+		bind(el, {value}) {
+			let { timestamp, format } = value;
+			el.innerHTML = moment(timestamp).format(format);
 		}
 	}
 }

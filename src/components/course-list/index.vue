@@ -41,8 +41,11 @@
 				}
 			}
 		},
-		created() {
-			console.log(this.list);
+		mounted() {
+			document.addEventListener('scroll', () => {
+				let { clientHeight, scrollHeight, scrollTop } = document.documentElement;
+				if(Math.abs(clientHeight + scrollTop - scrollHeight) <= 100) this.$emit('scrollPastEnd');
+			});
 		}
 	}
 </script>
