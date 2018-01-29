@@ -16,8 +16,8 @@
 		},
 		methods: {
 			_initWidth() {
-				// let totalWidth = 0;
-				// let
+				let totalWidth = 0;
+				// this.children = 
 			},
 			_initScroll() {
 				this.scroll = new BScroll(this.$refs.wrapper, {

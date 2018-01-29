@@ -48,9 +48,7 @@
 		            <div class="live-title">直播课推荐</div>
 		            <a class="liveMore" href="javascript:void(0);"></span></a>
 		        </div>
-		        <scroll class="courseRecommendWrapper"
-		        	:dir="'x'"
-		        >
+		        <scroll :dir="'x'" class="courseRecommendWrapper">
 		        	<div class="courseRecommendList clearfix">
 		        		<div class="courseRecommendItem fl" v-for="item in openList" :class="recommendItemBgMap[item.subject]">
 		        		    <a class="toBlock" href="javascript:void(0);">
@@ -68,8 +66,8 @@
 		        		        </div>
 		        		    </a>
 		        		</div>
-		        	</div>
-		        </scroll>
+			        </div>
+		        </scroll> 
 		    </div>
 
 		    <!-- <div class="liveRecommend openCourseRankings">

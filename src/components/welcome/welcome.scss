@@ -273,8 +273,8 @@
 		.courseRecommendWrapper {
 			width: 100%;
 			overflow: hidden;
-			height: px2rem(230);
-			padding-top: px2rem(92);
+			height: px2rem(322);
+			// padding-top: px2rem(92);
 			padding-bottom: px2rem(48);
 			position: relative;
 			left: 0;
@@ -283,6 +283,8 @@
 		.courseRecommendList {
 			width: px2rem(9999);
 			height: 100%;
+			box-sizing: border-box;
+			padding-top: px2rem(90);
 			.courseRecommendItem {
 				position: relative;
 				width: px2rem(460);
