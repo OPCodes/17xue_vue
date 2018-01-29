@@ -1,6 +1,6 @@
 <template>
 	<div style="background: #fff;">
-		<top-navi></top-navi>
+		<top-navi v-if="params" :subjects="params.subjects" :grades="params.grades"></top-navi>
 		<section class="xueFirst longTop">
 		    <!-- <div class="course-banner swiper-container" id="swiper-container">
 		        <ul class="banner-wrapper swiper-wrapper">
@@ -41,7 +41,14 @@
 		},
 		methods: {
 			_getList() {
-				ajax({ url: '/api/course/center/subject/list.vpage', type: 'post' })
+				const data = {
+					grade: this.params.currentUser ? this.params.currentUser.grade : 0,
+					subject: this.subject,
+					clazzType: 0,
+					page: this.page,
+					coupon_cos_ids: []
+				};
+				ajax({ url: '/api/course/center/subject/list.vpage', type: 'post', data })
 				.then(res => {
 					if(res.success) {
 						this.courses = res.data.courses.content;
@@ -51,13 +58,19 @@
 				});
 			},
 			_getFtl() {
-				getFtlParams().then(res => {
+				return getFtlParams().then(res => {
 					this.params = res;
+					return Promise.resolve();
 				});
 			}
 		},
 		created() {
-			this._getFtl();
+			this.subject = this.$route.params.subject;
+			this._getFtl().then(() => {
+				this._getList();
+			});
+		},
+		update() {
 			this._getList();
 		},
 		components: {

@@ -2,11 +2,13 @@
 	<div class="xue_comp_topNavi">
 	    <div class="level_wrapper clearfix">
 	        <div class="grade_filter fl">
-	            <span class="filter_txt"></span>
+	            <span class="filter_txt">111</span>
 	        </div>
 	        <div id="subject_swiper" class="subject_swiper_wrapper fl clearfix">
 	            <ul class="subject_swiper clearfix">
-	                <li class="swiper_col"></li>
+	            	<router-link tag="li" class="swiper_col" v-for="item in subjects" :key="item.code" :class="{ 'on': subjectClass(item.code) }" :to="`/courseCenter/${item.code}`">
+	            		{{item.name}}
+	            	</router-link>
 	            </ul>
 	        </div>
 	    </div>
@@ -21,7 +23,39 @@
 
 <script>
 	export default {
-
+		data() {
+			return {
+				focusSubject: 0
+			};
+		},
+		props: {
+			subjects: {
+				type: Array,
+				default() {
+					return [];
+				}
+			},
+			grade: {
+				type: Array,
+				default() {
+					return [];
+				}
+			}
+		},
+		methods: {
+			subjectClass(code) {
+				return code == this.$route.params.subject;
+			}
+		},
+		watch: {
+			focusSubject(n) {
+				console.log(n);
+			}
+		},
+		created() {
+			this.focusSubject = this.$route.params.subject;
+			this.subjects.unshift({ code: 0, name: '全部' });
+		}
 	}
 </script>
 

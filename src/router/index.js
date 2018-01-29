@@ -13,7 +13,7 @@ export default new Router({
     		component: Welcome,
     		alias: '/welcome'
     	}, {
-    		path: '/courseCenter',
+    		path: '/courseCenter/:subject',
     		component: CourseCenter
     	}
     ]
