@@ -1,19 +1,22 @@
 <template>
 	<div class="welcome">
 		<section class="xueFirst">
-		    <div class="course-banner swiper-container" id="swiper-container">
-		        <ul class="banner-wrapper swiper-wrapper">
-		            <li class="banner-item fl swiper-slide">
-		                <a class="banner-link">
-		                    <img src="">
-		                </a>
-		                <a class="banner-link">
-		                    <img src="">
-		                </a>
-		            </li>
-		        </ul>
-		        <ul class="switch-dot"></ul>
-		    </div>
+			<slider class="course-banner swiper-container">
+				<ul class="banner-wrapper swiper-wrapper" slot="imgs">
+				    <li class="banner-item fl swiper-slide">
+				        <a class="banner-link">
+				            <img src="">
+				        </a>
+				        <a class="banner-link">
+				            <img src="">
+				        </a>
+				    </li>
+				</ul>
+				<ul class="switch-dot" slot="dots"></ul>
+			</slider>
+		    <!-- <div class="course-banner swiper-container" id="swiper-container">
+
+		    </div> -->
 		</section>
 		<section class="xue_firstFace">
 		    <div class="core_navItem">
@@ -129,6 +132,7 @@
 
 <script>
 	import { ajax } from '@/common/js/Tools';
+	import Slider from '@/components/base/slider';
 
 	export default {
 		methods: {
@@ -145,8 +149,11 @@
 		},
 		created() {
 		    this._getIndexList();
+		},
+		components: {
+			Slider
 		}
 	}
 </script>
 
-<style lang="scss" src="./_welcome.scss"></style>
+<style scoped lang="scss" src="./_welcome.scss"></style>
