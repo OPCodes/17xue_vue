@@ -4,6 +4,7 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import '@/common/styles/base.scss';
+import directives from '@/directives';
 
 Vue.config.productionTip = false;
 
@@ -13,4 +14,9 @@ new Vue({
     router,
     components: { App },
     template: '<App/>'
+});
+
+// inject directives
+Object.keys(directives).forEach(key => {
+	Vue.directive(key, directives[key]);
 });

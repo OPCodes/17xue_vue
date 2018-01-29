@@ -1,11 +1,11 @@
 <template>
 	<div class="welcome">
 		<section class="xueFirst">
-			<slider class="course-banner swiper-container">
+			<slider class="course-banner swiper-container" :list="sliders">
 				<ul class="banner-wrapper swiper-wrapper" slot="imgs">
-				    <li class="banner-item fl swiper-slide">
-				        <a class="banner-link">
-				            <img src="">
+				    <li class="banner-item fl swiper-slide" v-for="item in sliders">
+				        <a class="banner-link" :href="item.jumpUrl">
+				            <img v-url="item.imgUrl">
 				        </a>
 				        <a class="banner-link">
 				            <img src="">
@@ -135,20 +135,32 @@
 	import Slider from '@/components/base/slider';
 
 	export default {
+		data() {
+			return {
+				sliders: []
+			};
+		},
 		methods: {
 		    _getIndexList() {
 		        ajax({ url: '/api/indexlist.vpage', type: 'post' })
-		        .then(returnData => {
-		            if(returnData.success) {
-		                console.log(returnData.data);
-		            }
-		        }).catch(err => {
-		            console.log(err);
-		        });
+	        	.then(res => {
+	        	    console.log(res);
+	        	}).catch(err => {
+	        	    console.info('ajax error', err);
+	        	});
+		    },
+		    _getSliderList() {
+		        ajax({ url: '/api/open/banner.vpage', type: 'post' })
+	        	.then(res => {
+	        	    this.sliders = res.data.banners;
+	        	}).catch(err => {
+	        	    console.info('ajax error', err);
+	        	});
 		    }
 		},
 		created() {
-		    this._getIndexList();
+		    // this._getIndexList();
+		    this._getSliderList();
 		},
 		components: {
 			Slider
