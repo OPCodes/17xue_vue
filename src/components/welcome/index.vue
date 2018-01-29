@@ -67,30 +67,16 @@
 		        		    </a>
 		        		</div>
 			        </div>
-		        </scroll> 
+		        </scroll>
 		    </div>
 
-		    <!-- <div class="liveRecommend openCourseRankings">
+		    <div class="liveRecommend openCourseRankings" v-if="rankList.length > 0">
 		        <div class="liveTitleItem">
 		            <div class="live-title" style="-webkit-tap-highlight-color:rgba(255,255,255,0);">公开课排行榜</div>
 		            <a class="liveMore" href="javascript:void(0);" ></span></a>
 		        </div>
-		        <div class="openCourseList">
-		            <div class="openCourseItem clearfix" >
-		                <div class="teacherAvatar fl">
-		                    <div class="picItem ">
-		                        <img src="" alt="">
-		                    </div>
-		                </div>
-		                <div class="courseItem fl">
-		                    <div class="openCourseName">三年级海尼曼绘本寒假超长班班班班</div>
-		                    <div class="openCourseTeacher">夏婉秋</div>
-		                    <div class="playNum">284724727</div>
-		                    <div class="openCourseTag">巧用自然拼读，轻松读Heinemann</div>
-		                </div>
-		            </div>
-		        </div>
-		    </div> -->
+		        <rank-list :list="rankList"></rank-list>
+		    </div>
 
 		    <div class="liveRecommend courseSelected" v-if="selectList.length > 0">
 		        <div class="liveTitleItem">
@@ -122,6 +108,7 @@
 	import Scroll from '@/components/base/scroll';
 	import Notice from '@/components/notice';
 	import CourseList from '@/components/course-list';
+	import rankList from '@/components/rank-list';
 
 	export default {
 		data() {
@@ -131,6 +118,7 @@
 				page: 0,
 				selectList: [],
 				openList: [],
+				rankList: [],
 				recommendItemBgMap: {
 					1: 'englishBg',
 					2: 'authBg',
@@ -139,6 +127,16 @@
 			};
 		},
 		methods: {
+		    _getRankList() {
+		        ajax({ url: '/api/course/open/ranklist.vpage', type: 'post' })
+	        	.then(res => {
+	        		if(res.success) {
+	        			this.rankList = res.data.courseList;
+	        		}
+	        	}).catch(err => {
+	        	    console.info('ajax error', err);
+	        	});
+		    },
 		    _getIndexList() {
 		        ajax({ url: '/api/indexlist.vpage', type: 'post' })
 	        	.then(res => {
@@ -186,6 +184,7 @@
 		},
 		created() {
 		    this._getIndexList();
+		    this._getRankList();
 		    this._getSliderList();
 		    this._getSelectList(this.page);
 		},
@@ -193,7 +192,8 @@
 			Slider,
 			Notice,
 			CourseList,
-			Scroll
+			Scroll,
+			rankList
 		}
 	}
 </script>
