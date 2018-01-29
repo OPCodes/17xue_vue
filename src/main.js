@@ -5,6 +5,7 @@ import App from './App';
 import router from './router';
 import '@/common/styles/base.scss';
 import directives from '@/directives';
+import 'hotcss';
 
 Vue.config.productionTip = false;
 

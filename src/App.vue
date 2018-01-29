@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import 'hotcss';
-
 export default {
 
 }

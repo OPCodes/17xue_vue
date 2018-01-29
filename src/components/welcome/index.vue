@@ -22,20 +22,12 @@
 		</section>
 		<section class="xue_firstFace">
 		    <div class="core_navItem">
-		        <div class="core_col core_courseCenter">
-		            <h3 class="core_title">选课中心</h3>
-		        </div>
-		        <div class="core_col core_studyCenter">
-		            <h3 class="core_title">学习中心</h3>
-		        </div>
-		    </div>
-		    <div class="core_navItem float" id="float_navi" style="display: none;">
-		        <div class="core_col core_courseCenter">
-		            <h3 class="core_title">选课中心</h3>
-		        </div>
-		        <div class="core_col core_studyCenter">
-		            <h3 class="core_title">学习中心</h3>
-		        </div>
+		    	<router-link tag="div" class="core_col core_courseCenter" to="/courseCenter">
+		    		<h3 class="core_title">选课中心</h3>
+		    	</router-link>
+		    	<router-link tag="div" class="core_col core_courseCenter" to="/courseCenter">
+		    		<h3 class="core_title">学习中心</h3>
+		    	</router-link>
 		    </div>
 
 		    <notice

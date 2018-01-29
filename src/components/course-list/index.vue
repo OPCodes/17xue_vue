@@ -19,6 +19,11 @@
 	            <div class="coursePrice"><span class="doll">¥</span><span>{{item.realPrice / 100}}</span></div>
 	        </a>
 	    </div>
+		<!-- <div id="nomore" style="display: none;">没有更多啦!</div> -->
+		<div class="listNull main" v-if="list.length == 0">
+		    <img src="/public/images/wechat/null/course_null.png" alt="" class="listNull_img">
+		    <div class="listNull_txt">暂无课程</div>
+		</div>
 	</div>
 </template>
 
@@ -177,5 +182,55 @@
 				}
 			}
 		}
+	}
+
+	.listNull {
+		&.main {
+			padding-top: px2rem(250);
+		}
+		&.comp {
+			padding-top: px2rem(88);
+		}
+		&.task {
+			padding-top: px2rem(20);
+			.listNull_img {
+				width: px2rem(200);
+				height: px2rem(200);
+			}
+		}
+		.listNull_img {
+			width: px2rem(280);
+			height: px2rem(250);
+			display: block;
+			margin: 0 auto;
+		}
+		.listNull_txt {
+			font-size: px2rem(22);
+			line-height: px2rem(22);
+			color: #6F6F6F;
+			margin-top: px2rem(40);
+			text-align: center;
+		}
+		.knowMore {
+			display: block;
+			width: px2rem(558);
+			height: px2rem(88);
+			margin: px2rem(299) auto 0 auto;
+			text-align: center;
+			font-size: px2rem(30);
+			line-height: px2rem(88);
+			border-radius: px2rem(50);
+			border: solid 2px #F95862;
+			background-color: #F2F5F9;
+			color: #F95862;
+		}
+	}
+
+	#nomore {
+	    text-align: center;
+	    padding: px2rem(40) px2rem(30) px2rem(70) px2rem(30);
+	    color: #6B6B6B;
+	    font-size: px2rem(22);
+	    background-color: #F2F5F9;
 	}
 </style>
