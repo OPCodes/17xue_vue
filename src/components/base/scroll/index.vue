@@ -16,8 +16,9 @@
 		},
 		methods: {
 			_initWidth() {
-				let totalWidth = 0;
-				// this.children = 
+				this.children = this.$refs.wrapper.children[0].children;
+				let cardWidth = this.children[0].clientWidth + this.children[0].offsetLeft;
+				this.$refs.wrapper.children[0].style.width = `${this.children.length * cardWidth}px`;
 			},
 			_initScroll() {
 				this.scroll = new BScroll(this.$refs.wrapper, {
