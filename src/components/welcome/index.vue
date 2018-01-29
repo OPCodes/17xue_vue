@@ -1,22 +1,24 @@
 <template>
 	<div class="welcome">
 		<section class="xueFirst">
-			<slider class="course-banner swiper-container" :list="sliders">
-				<ul class="banner-wrapper swiper-wrapper" slot="imgs">
+			<slider class="course-banner"
+				v-if="sliders.length > 0"
+				:dotsClass="'on'"
+				:loop="false"
+				:autoplay="true"
+				:interval="1000"
+				>
+				<ul class="banner-wrapper" slot="imgs">
 				    <li class="banner-item fl swiper-slide" v-for="item in sliders">
 				        <a class="banner-link" :href="item.jumpUrl">
 				            <img v-url="item.imgUrl">
 				        </a>
-				        <a class="banner-link">
-				            <img src="">
-				        </a>
 				    </li>
 				</ul>
-				<ul class="switch-dot" slot="dots"></ul>
+				<ul class="switch-dot" slot="dots">
+					<i class="dots" v-for="item in sliders"></i>
+				</ul>
 			</slider>
-		    <!-- <div class="course-banner swiper-container" id="swiper-container">
-
-		    </div> -->
 		</section>
 		<section class="xue_firstFace">
 		    <div class="core_navItem">
@@ -35,13 +37,13 @@
 		            <h3 class="core_title">学习中心</h3>
 		        </div>
 		    </div>
-		    <section class="activity clearfix">
-		        <span class="activity_col activity_title fl">【活动】</span>
-		        <span class="activity_col activity_para fl">助跑新学期，提升学习力！</span>
-		        <span class="activity_col activity_bar fl"></span>
-		        <a href="javascript: void(0);" class="activity_col activity_btn fl">去查看</a>
-		    </section>
-		    <div class="liveRecommend">
+
+		    <notice
+		    	:para="'助跑新学期，提升学习力！'"
+		    	:btnLink="'/'"
+		    ></notice>
+
+		    <!-- <div class="liveRecommend">
 		        <div class="liveTitleItem">
 		            <div class="live-title">直播课推荐</div>
 		            <a class="liveMore" href="javascript:void(0);"></span></a>
@@ -66,8 +68,9 @@
 		                </div>
 		            </div>
 		        </div>
-		    </div>
-		    <div class="liveRecommend openCourseRankings">
+		    </div> -->
+
+		    <!-- <div class="liveRecommend openCourseRankings">
 		        <div class="liveTitleItem">
 		            <div class="live-title" style="-webkit-tap-highlight-color:rgba(255,255,255,0);">公开课排行榜</div>
 		            <a class="liveMore" href="javascript:void(0);" ></span></a>
@@ -87,33 +90,14 @@
 		                </div>
 		            </div>
 		        </div>
-		    </div>
-		    <div class="liveRecommend courseSelected">
+		    </div> -->
+
+		    <div class="liveRecommend courseSelected" v-if="selectList.length > 0">
 		        <div class="liveTitleItem">
 		            <div class="live-title" style="-webkit-tap-highlight-color:rgba(255,255,255,0);">精选课程</div>
 		            <a class="liveMore" href="javascript:void(0);"></span></a>
 		        </div>
-		        <div class="courseSelectedList">
-		            <div class="courseSelectedItem">
-		                <a class="toBlock" href="javascript:void(0);">
-		                    <div class="courseSelectedName">
-		                        <div class="subjectText">英语</div>
-		                        <div class="subContent">单词记忆宝典（上）</div>
-		                    </div>
-		                    <div class="courseSelectedTimes">
-		                        <span class="day"></span>
-		                    </div>
-		                    <div class="teacherItem clearfix">
-		                        <div class="courseSelectedTeacher fl">
-		                            <img src="" alt="">
-		                        </div>
-		                        <div class="teacherName fl">阿紫老师</div>
-		                    </div>
-		                    <i class="iconRecommend"></i>
-		                    <div class="coursePrice"><span class="doll">¥</span><span>3990</span></div>
-		                </a>
-		            </div>
-		        </div>
+		        <course-list :list="selectList"></course-list>
 		    </div>
 		</section>
 
@@ -131,13 +115,16 @@
 </template>
 
 <script>
-	import { ajax } from '@/common/js/Tools';
+	import { ajax } from '@/common/js/utils';
 	import Slider from '@/components/base/slider';
+	import Notice from '@/components/notice';
+	import CourseList from '@/components/course-list';
 
 	export default {
 		data() {
 			return {
-				sliders: []
+				sliders: [],
+				selectList: []
 			};
 		},
 		methods: {
@@ -152,7 +139,24 @@
 		    _getSliderList() {
 		        ajax({ url: '/api/open/banner.vpage', type: 'post' })
 	        	.then(res => {
-	        	    this.sliders = res.data.banners;
+	        		this.sliders = res.data.banners;
+	        	}).catch(err => {
+	        	    console.info('ajax error', err);
+	        	});
+		    },
+		    _getSelectList(page) {
+		        ajax({
+		        	url: '/api/course/open/selectedcourselist.vpage',
+		        	type: 'post',
+		        	data: {
+		        		page
+			        }
+			    })
+	        	.then(res => {
+	        	    if(res.success) {
+	        	    	this.selectList = res.data.selectedCourseList.content;
+	        	    	this.totalPages = res.data.selectedCourseList.totalPages;
+	        	    }
 	        	}).catch(err => {
 	        	    console.info('ajax error', err);
 	        	});
@@ -161,9 +165,14 @@
 		created() {
 		    // this._getIndexList();
 		    this._getSliderList();
+		    setTimeout(() => {
+		    	this._getSelectList(0);
+		    }, 0);
 		},
 		components: {
-			Slider
+			Slider,
+			Notice,
+			CourseList
 		}
 	}
 </script>
