@@ -128,7 +128,7 @@
 </template>
 
 <script>
-	import { ajax } from '@/common/Tools';
+	import { ajax } from '@/common/js/Tools';
 
 	export default {
 		methods: {
@@ -149,7 +149,4 @@
 	}
 </script>
 
-<style lang="scss">
-	@import '../../styles/wechat.scss';
-	@import './welcome.scss';
-</style>
+<style lang="scss" src="./_welcome.scss"></style>
