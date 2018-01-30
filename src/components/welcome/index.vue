@@ -80,6 +80,7 @@
 		        	@scrollPastEnd="loadMore"
 		        ></course-list>
 		    </div>
+	        <loading v-show="selectListFlag"></loading>
 		</section>
 
 		<div id="nomore" style="display: none;">没有更多啦!</div>
@@ -101,6 +102,7 @@
 	import Notice from '@/components/notice';
 	import CourseList from '@/components/course-list';
 	import rankList from '@/components/rank-list';
+	import Loading from '@/components/base/loading';
 
 	export default {
 		data() {
@@ -115,7 +117,8 @@
 					1: 'englishBg',
 					2: 'authBg',
 					3: 'chineseBg'
-				}
+				},
+				selectListFlag: false
 			};
 		},
 		methods: {
@@ -186,7 +189,8 @@
 			Notice,
 			CourseList,
 			Scroll,
-			rankList
+			rankList,
+			Loading
 		}
 	}
 </script>
