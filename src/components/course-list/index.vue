@@ -19,11 +19,6 @@
 	            <div class="coursePrice"><span class="doll">¥</span><span>{{item.realPrice / 100}}</span></div>
 	        </a>
 	    </div>
-		<!-- <div id="nomore" style="display: none;">没有更多啦!</div> -->
-		<div class="listNull main" v-if="list.length == 0">
-		    <img src="/public/images/wechat/null/course_null.png" alt="" class="listNull_img">
-		    <div class="listNull_txt">暂无课程</div>
-		</div>
 	</div>
 </template>
 

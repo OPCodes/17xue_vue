@@ -80,10 +80,18 @@
 		        	@scrollToEnd="loadMore"
 		        ></course-list>
 		    </div>
+			<no-more
+				:page="page"
+				:totalPages="totalPages"
+				:text="'没有更多了!'"
+			></no-more>
+		  <!--   <div class="listNull main" v-if="selectList.length == 0">
+		        <img src="/public/images/wechat/null/course_null.png" alt="" class="listNull_img">
+		        <div class="listNull_txt">暂无课程</div>
+		    </div> -->
 	        <loading v-show="selectListFlag"></loading>
 		</section>
 
-		<div id="nomore" style="display: none;">没有更多啦!</div>
 		<div class="alert-shadow">
 		    <div class="alert-cont">
 		        <div class="avatar-img">
@@ -103,6 +111,7 @@
 	import CourseList from '@/components/course-list';
 	import rankList from '@/components/rank-list';
 	import Loading from '@/components/base/loading';
+	import NoMore from '@/components/base/nomore';
 
 	export default {
 		data() {
@@ -110,6 +119,7 @@
 				sliders: [],
 				selectList: [],
 				page: 0,
+				totalPages: 1,
 				selectList: [],
 				openList: [],
 				rankList: [],
@@ -174,8 +184,7 @@
 		    loadMore() {
 		    	if(this.selectListFlag) return;
 		    	if(this.page + 1 == this.totalPages) return;
-		    	this.page += 1;
-		    	this._getSelectList(this.page);
+		    	this._getSelectList(this.page + 1);
 		    }
 		},
 		created() {
@@ -190,7 +199,8 @@
 			CourseList,
 			Scroll,
 			rankList,
-			Loading
+			Loading,
+			NoMore
 		}
 	}
 </script>
