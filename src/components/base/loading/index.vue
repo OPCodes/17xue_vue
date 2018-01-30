@@ -1,5 +1,5 @@
 <template>
-	<div class="loader">
+	<div class="loader" :style="bgClass">
 		<div class="loader-inner ball-clip-rotate">
 			<div></div>
 		</div>
@@ -8,7 +8,17 @@
 
 <script>
 	export default {
-
+		props: {
+			bg: {
+				type: String,
+				default: 'transparent'
+			}
+		},
+		computed: {
+			bgClass() {
+				return `background-color: ${this.bg}`;
+			}
+		}
 	}
 </script>
 

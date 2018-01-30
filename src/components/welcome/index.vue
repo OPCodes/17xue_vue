@@ -25,7 +25,7 @@
 		    	<router-link tag="div" class="core_col core_courseCenter" to="/courseCenter/0">
 		    		<h3 class="core_title">选课中心</h3>
 		    	</router-link>
-		    	<router-link tag="div" class="core_col core_courseCenter" to="/">
+		    	<router-link tag="div" class="core_col core_studyCenter" to="/">
 		    		<h3 class="core_title">学习中心</h3>
 		    	</router-link>
 		    </div>
@@ -79,7 +79,7 @@
 		        	:list="selectList"
 		        	:page="page"
 		        	:totalPages="totalPages"
-		        	@scrollToEnd="loadMore"
+		        	@scrollToEnd="loadMoreList"
 		        ></course-list>
 		    </div>
 		  <!--   <div class="listNull main" v-if="selectList.length == 0">
@@ -101,7 +101,7 @@
 </template>
 
 <script>
-	import { ajax } from '@/common/js/utils';
+	import { ajax, loadMore } from '@/common/js/utils';
 	import Slider from '@/components/base/slider';
 	import Scroll from '@/components/base/scroll';
 	import Notice from '@/components/notice';
@@ -177,10 +177,13 @@
 	        	    console.info('ajax error', err);
 	        	});
 		    },
-		    loadMore() {
-		    	if(this.selectListFlag) return;
-		    	if(this.page + 1 == this.totalPages) return;
-		    	this._getSelectList(this.page + 1);
+		    loadMoreList() {
+		    	loadMore({
+		    		flag: this.selectListFlag,
+		    		page: this.page,
+		    		totalPages: this.totalPages,
+		    		fnSearch: this._getSelectList
+		    	});
 		    }
 		},
 		created() {

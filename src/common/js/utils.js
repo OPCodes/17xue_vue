@@ -43,3 +43,10 @@ export function delClass(el, className) {
 	newClass.splice(newClass.indexOf(className), 1);
 	el.className = newClass.join(' ');
 }
+
+export function loadMore({flag, page, totalPages, fnSearch}) {
+	if(flag) return;
+	console.log('come in');
+	if(page + 1 == totalPages) return;
+	fnSearch(page + 1);
+}
