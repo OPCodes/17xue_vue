@@ -19,11 +19,13 @@
 	            <div class="coursePrice"><span class="doll">¥</span><span>{{item.realPrice / 100}}</span></div>
 	        </a>
 	    </div>
+	    <div class="nomore" v-show="showNoMore">没有更多了!</div>
 	</div>
 </template>
 
 <script>
 	const LOAD_LENGTH = 50;
+
 	export default {
 		props: {
 			list: {
@@ -31,6 +33,14 @@
 				default() {
 					return [];
 				}
+			},
+			page: {
+				type: Number,
+				default: 0
+			},
+			totalPages: {
+				type: Number,
+				default: 1
 			}
 		},
 		data() {
@@ -48,6 +58,11 @@
 				let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 				if(scrollHeight - clientHeight - scrollTop <= LOAD_LENGTH) this.$emit('scrollToEnd');
 			});
+		},
+		computed: {
+			showNoMore() {
+				return this.page + 1 === this.totalPages;
+			}
 		}
 	}
 </script>
@@ -223,7 +238,7 @@
 		}
 	}
 
-	#nomore {
+	.nomore {
 	    text-align: center;
 	    padding: px2rem(40) px2rem(30) px2rem(70) px2rem(30);
 	    color: #6B6B6B;

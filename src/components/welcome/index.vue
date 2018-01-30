@@ -77,14 +77,11 @@
 		        </div>
 		        <course-list
 		        	:list="selectList"
+		        	:page="page"
+		        	:totalPages="totalPages"
 		        	@scrollToEnd="loadMore"
 		        ></course-list>
 		    </div>
-			<no-more
-				:page="page"
-				:totalPages="totalPages"
-				:text="'没有更多了!'"
-			></no-more>
 		  <!--   <div class="listNull main" v-if="selectList.length == 0">
 		        <img src="/public/images/wechat/null/course_null.png" alt="" class="listNull_img">
 		        <div class="listNull_txt">暂无课程</div>
@@ -111,7 +108,6 @@
 	import CourseList from '@/components/course-list';
 	import rankList from '@/components/rank-list';
 	import Loading from '@/components/base/loading';
-	import NoMore from '@/components/base/nomore';
 
 	export default {
 		data() {
@@ -199,8 +195,7 @@
 			CourseList,
 			Scroll,
 			rankList,
-			Loading,
-			NoMore
+			Loading
 		}
 	}
 </script>

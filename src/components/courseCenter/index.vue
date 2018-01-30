@@ -39,7 +39,7 @@
 			return {
 				courses: [],
 				page: 0,
-				totalPage: 1,
+				totalPages: 1,
 				params: null
 			};
 		},
