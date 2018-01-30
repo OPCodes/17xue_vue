@@ -49,7 +49,7 @@
 		mounted() {
 			document.addEventListener('scroll', () => {
 				let { clientHeight, scrollHeight, scrollTop } = document.documentElement;
-				if(Math.abs(clientHeight + scrollTop - scrollHeight) <= 100) this.$emit('scrollPastEnd');
+				if(scrollHeight - clientHeight - scrollTop <= 100) this.$emit('scrollPastEnd');
 			});
 		}
 	}

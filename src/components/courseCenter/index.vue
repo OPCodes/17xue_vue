@@ -84,6 +84,7 @@
 				this.page = 0;
 				this.totalPage = 1;
 				this._getList();
+				document.documentElement.scrollTop = 0;
 			}
 		},
 		components: {

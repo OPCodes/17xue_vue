@@ -170,6 +170,7 @@
 		    },
 		    loadMore() {
 		    	if(this.selectListFlag) return;
+		    	if(this.page + 1 == this.totalPages) return;
 		    	this.page += 1;
 		    	this._getSelectList(this.page);
 		    }
