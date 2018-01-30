@@ -77,7 +77,7 @@
 		        </div>
 		        <course-list
 		        	:list="selectList"
-		        	@scrollPastEnd="loadMore"
+		        	@scrollToEnd="loadMore"
 		        ></course-list>
 		    </div>
 	        <loading v-show="selectListFlag"></loading>

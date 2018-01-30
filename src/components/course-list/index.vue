@@ -28,6 +28,7 @@
 </template>
 
 <script>
+	const LOAD_LENGTH = 50;
 	export default {
 		props: {
 			list: {
@@ -48,8 +49,9 @@
 		},
 		mounted() {
 			document.addEventListener('scroll', () => {
-				let { clientHeight, scrollHeight, scrollTop } = document.documentElement;
-				if(scrollHeight - clientHeight - scrollTop <= 100) this.$emit('scrollPastEnd');
+				let { clientHeight, scrollHeight } = document.documentElement;
+				let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+				if(scrollHeight - clientHeight - scrollTop <= LOAD_LENGTH) this.$emit('scrollToEnd');
 			});
 		}
 	}
