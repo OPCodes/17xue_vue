@@ -6,6 +6,11 @@ import router from './router';
 import '@/common/styles/base.scss';
 import directives from '@/directives';
 import 'hotcss';
+import VConsole from 'vconsole';
+
+if(process.env.NODE_ENV === 'development') {
+	new VConsole();
+}
 
 Vue.config.productionTip = false;
 
