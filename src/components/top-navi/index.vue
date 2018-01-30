@@ -48,13 +48,13 @@
 			}
 		},
 		watch: {
-			focusSubject(n) {
-				console.log(n);
+			$route(n) {
+				this.$emit('change', this.focusSubject);
 			}
 		},
 		created() {
-			this.focusSubject = this.$route.params.subject;
-			this.subjects.unshift({ code: 0, name: '全部' });
+			this.focusSubject = this.$route.params.subject || 0;
+			this.subjects[0].code != 0 && this.subjects.unshift({ code: 0, name: '全部' });
 		}
 	}
 </script>

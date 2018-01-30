@@ -22,7 +22,7 @@
 		</section>
 		<section class="xue_firstFace">
 		    <div class="core_navItem">
-		    	<router-link tag="div" class="core_col core_courseCenter" to="/courseCenter">
+		    	<router-link tag="div" class="core_col core_courseCenter" to="/courseCenter/0">
 		    		<h3 class="core_title">选课中心</h3>
 		    	</router-link>
 		    	<router-link tag="div" class="core_col core_courseCenter" to="/">

@@ -1,4 +1,6 @@
 import axios from 'axios';
+import qs from 'qs';
+import { commonParams } from './config';
 
 export function ajax({
 	url,
@@ -7,8 +9,8 @@ export function ajax({
 	success,
 	error
 }) {
-	data = type.toLowerCase() === 'get' ? { params: data } : data;
-	return axios[type](url, data)
+	data = type.toLowerCase() === 'get' ? { params: data } : qs.stringify(data);
+	return axios[type](url, data, commonParams)
 	.then(res => {
 		return Promise.resolve(res.data);
 	})

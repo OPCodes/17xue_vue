@@ -1,6 +1,11 @@
 <template>
 	<div style="background: #fff;">
-		<top-navi v-if="params" :subjects="params.subjects" :grades="params.grades"></top-navi>
+		<top-navi
+			v-if="params"
+			:subjects="params.subjects"
+			:grades="params.grades"
+			@change="subjectChange"
+		></top-navi>
 		<section class="xueFirst longTop">
 		    <!-- <div class="course-banner swiper-container" id="swiper-container">
 		        <ul class="banner-wrapper swiper-wrapper">
@@ -40,6 +45,9 @@
 			};
 		},
 		methods: {
+			subjectChange(code) {
+
+			},
 			_getList() {
 				const data = {
 					grade: this.params.currentUser ? this.params.currentUser.grade : 0,
@@ -65,13 +73,18 @@
 			}
 		},
 		created() {
-			this.subject = this.$route.params.subject;
+			this.subject = this.$route.params.subject - 0;
 			this._getFtl().then(() => {
 				this._getList();
 			});
 		},
-		update() {
-			this._getList();
+		watch: {
+			$route() {
+				this.subject = this.$route.params.subject - 0;
+				this.page = 0;
+				this.totalPage = 1;
+				this._getList();
+			}
 		},
 		components: {
 			CourseList,
