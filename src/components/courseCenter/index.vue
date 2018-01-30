@@ -4,7 +4,6 @@
 			v-if="params"
 			:subjects="params.subjects"
 			:grades="params.grades"
-			@change="subjectChange"
 		></top-navi>
 		<section class="xueFirst longTop">
 		    <!-- <div class="course-banner swiper-container" id="swiper-container">
@@ -45,9 +44,6 @@
 			};
 		},
 		methods: {
-			subjectChange(code) {
-
-			},
 			_getList() {
 				const data = {
 					grade: this.params.currentUser ? this.params.currentUser.grade : 0,
