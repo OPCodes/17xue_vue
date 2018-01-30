@@ -100,6 +100,7 @@
 				this.subject = this.$route.params.subject - 0;
 				this.page = 0;
 				this.totalPage = 1;
+				this.courses = [];
 				this._getList();
 				document.documentElement.scrollTop = 0;
 			}
